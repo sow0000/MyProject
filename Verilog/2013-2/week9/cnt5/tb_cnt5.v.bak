@@ -1,0 +1,22 @@
+`timescale 1np/100ps
+
+module tb_cnt5;
+	reg tb_clk,tb_reset_n,tb_inc;
+	wire [2:0] tb_cnt;
+	
+	parameter STEP=10;
+	
+	cnt5 U0_cnt5(.cnt(tb_cnt), .clk(tb_clk), .reset_n(tb_reset_n), .inc(tb_inc));
+	
+	always#5 tb_clk=~tb_clk;
+  
+	initial
+	begin
+		tb_clk=1; 
+		tb_reset_n = 0; tb_inc = 1; #10;
+		tb_reset_n =1; #60;
+		tb_reset_n =0; #8;
+		tb_reset_n =1; tb_inc = 0; # 52;
+		$stop;
+	end
+endmodule

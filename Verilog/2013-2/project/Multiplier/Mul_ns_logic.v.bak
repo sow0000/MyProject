@@ -1,0 +1,14 @@
+module ns_logic(op_start,op_clear,s_interrupt,state,next_state);
+	input op_start,op_clear,s_interrupt; //input switch
+	input [1:0] state; //current state
+	output [1:0] next_state; //next state
+	
+	wire w0_state,w1_state;
+	
+	assign w0_state=(~state[1])&(~state[0])&(op_start)&(~op_clear);
+	assign w1_state=(state[1])&(~op_clear)&(~s_interrupt);
+	
+	assign next_state[1]=(w0_state)|(w1_state);
+	assign next_state[0]=((state[1])|(state[0]))&(~op_clear);
+endmodule //End of module
+		

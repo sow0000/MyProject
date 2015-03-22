@@ -1,0 +1,62 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E3A00003        MOV              r0, #3      ;Input 3 into r0
+    6 00000004         
+    7 00000004 E0801000        ADD              r1, r0, r0  ;3x2
+    8 00000008 E0811000        ADD              r1, r1, r0  ;3x3
+    9 0000000C E0811000        ADD              r1, r1, r0  ;3x4
+   10 00000010 E0811000        ADD              r1, r1, r0  ;3x5
+   11 00000014 E0811000        ADD              r1, r1, r0  ;3x6
+   12 00000018 E0811000        ADD              r1, r1, r0  ;3x7
+   13 0000001C E0811000        ADD              r1, r1, r0  ;3x8
+   14 00000020 E0811000        ADD              r1, r1, r0  ;3x9
+   15 00000024 E0811000        ADD              r1, r1, r0  ;3x10
+   16 00000028 E0811000        ADD              r1, r1, r0  ;3x11
+   17 0000002C E0811000        ADD              r1, r1, r0  ;3x12
+   18 00000030 E0811000        ADD              r1, r1, r0  ;3x13
+   19 00000034 E0811000        ADD              r1, r1, r0  ;3x14
+   20 00000038 E0811000        ADD              r1, r1, r0  ;3x15
+   21 0000003C E0811000        ADD              r1, r1, r0  ;3x16
+   22 00000040 E0811000        ADD              r1, r1, r0  ;3x17
+   23 00000044         
+   24 00000044 E3A02011        MOV              r2, #17     ;Input 17 into r1
+   25 00000048         
+   26 00000048 E0823002        ADD              r3, r2, r2  ;17x2
+   27 0000004C E0833002        ADD              r3, r3, r2  ;17x3
+   28 00000050         
+   29 00000050                 END                          ;End of file
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem03-
+2.d -o.\problem03-2.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --pred
+efine="__EVAL SETA 1" --list=.\problem03-2.lst problem03-2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file problem03-2.s
+   Uses
+      None
+Comment: ARMex unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem03-2.s
+   Uses
+      None
+Comment: start unused
+2 symbols
+333 symbols in table

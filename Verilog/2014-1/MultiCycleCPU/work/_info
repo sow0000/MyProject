@@ -1,0 +1,502 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Programming\Verilog\2014-1\MultiCycleCPU
+v_register32
+Z1 !s100 M>:gJfBSBZgl;@a>Ha[VB2
+Z2 I4mN_MSZ@8ZkP[Djf?bdJI3
+Z3 Vj[@NE`K><_g7iiQd<JAWC0
+Z4 dD:\Programming\Verilog\2014-1\MultiCycleCPU
+Z5 w1398694622
+Z6 8D:/Programming/Verilog/2014-1/MultiCycleCPU/REG.v
+Z7 FD:/Programming/Verilog/2014-1/MultiCycleCPU/REG.v
+L0 73
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1398748289.217000
+Z10 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/REG.v|
+Z11 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/REG.v|
+Z12 o-work work -O0
+Z13 n@_register32
+!i10b 1
+!s85 0
+!s101 -O0
+vA
+Z14 !s100 FJR5GbcKc`4V?RRM]M[]R0
+Z15 I@gJi6DD:2K^@=g5^5iXVF2
+Z16 VGhUQ55oamK;Q;@HTVB?6l3
+R4
+R5
+R6
+R7
+L0 42
+R8
+r1
+31
+R9
+R10
+R11
+R12
+n@a
+!i10b 1
+!s85 0
+!s101 -O0
+vADD
+Z17 !s100 Q498dNazWn1PJLXA4CzMT3
+Z18 IQTKc]c<]mZQLP?DQ2^:b51
+Z19 VCVDA:oRO3M^79998oK@:h2
+R4
+Z20 w1396814326
+Z21 8D:/Programming/Verilog/2014-1/MultiCycleCPU/ADD.v
+Z22 FD:/Programming/Verilog/2014-1/MultiCycleCPU/ADD.v
+L0 14
+R8
+r1
+31
+Z23 !s108 1398748286.072000
+Z24 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/ADD.v|
+Z25 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/ADD.v|
+R12
+Z26 n@a@d@d
+!i10b 1
+!s85 0
+!s101 -O0
+vALU
+Z27 !s100 X[V3HV<540D30F55Ca4G<1
+Z28 IJ[Do0gX^=^e=[KzPj?Xiz1
+Z29 VciL>Nkn3KL_[DTAmJ3YOY3
+R4
+Z30 w1396814328
+Z31 8D:/Programming/Verilog/2014-1/MultiCycleCPU/ALU.v
+Z32 FD:/Programming/Verilog/2014-1/MultiCycleCPU/ALU.v
+L0 14
+R8
+r1
+31
+Z33 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/ALU.v|
+R12
+Z34 n@a@l@u
+Z35 !s108 1398748286.476000
+Z36 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/ALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALUControl
+Z37 !s100 T=S8cSoao[IjJ9gmiof1D3
+Z38 IcJOQCeCSEkeeaO1JobL<j3
+Z39 VcYGZ3_AN;eN:cKFnWh3id1
+R4
+Z40 w1398680648
+Z41 8D:/Programming/Verilog/2014-1/MultiCycleCPU/ALUControl.v
+Z42 FD:/Programming/Verilog/2014-1/MultiCycleCPU/ALUControl.v
+L0 14
+R8
+r1
+31
+Z43 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/ALUControl.v|
+R12
+Z44 n@a@l@u@control
+Z45 !s108 1398748286.656000
+Z46 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/ALUControl.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALUOut
+Z47 !s100 `6c^K2@X6D]j<7XCUj3M80
+Z48 Im=Id2W<aS9Y>706OB2A<?3
+Z49 VIVXl2FlE>Z;21Mj6AiQ:03
+R4
+R5
+R6
+R7
+L0 57
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z50 n@a@l@u@out
+!i10b 1
+!s85 0
+!s101 -O0
+vcla32
+Z51 !s100 gMb<2a`30^3[]lCkPc>f83
+Z52 IDXQnkm8hzE;kZ^bC8AChN1
+Z53 VVP;WiX]LhBPY:Cb2Ojlld1
+R4
+R20
+R21
+R22
+L0 23
+R8
+r1
+31
+R23
+R24
+R25
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vcla4
+Z54 !s100 SmS]C1H3cK^DU?@9@4_X52
+Z55 I4dM2LKL^^:dV5UcfBYo`02
+Z56 V1C]l:<LaT?IhCT7g4PQ>n1
+R4
+R20
+R21
+R22
+L0 43
+R8
+r1
+31
+R23
+R24
+R25
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vdec532
+Z57 !s100 h@J>TQMfaTU8;K^0fAk4]0
+Z58 Ij^F8?AmjiTMa^hejAa[[C2
+Z59 VBA7cbcg45o=_j46dRKeT03
+R4
+Z60 w1398552792
+Z61 8D:/Programming/Verilog/2014-1/MultiCycleCPU/RF.v
+Z62 FD:/Programming/Verilog/2014-1/MultiCycleCPU/RF.v
+L0 88
+R8
+r1
+31
+Z63 !s108 1398748289.548000
+Z64 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/RF.v|
+Z65 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/RF.v|
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vFSM
+Z66 IfR]FAZ_:m[]d`UjQB1EV<0
+Z67 V3FK:H7aAD>IA9G5985>@22
+R4
+Z68 w1398748259
+Z69 8D:\Programming\Verilog\2014-1\MultiCycleCPU\FSM.v
+Z70 FD:\Programming\Verilog\2014-1\MultiCycleCPU\FSM.v
+L0 14
+R8
+r1
+31
+Z71 !s90 -reportprogress|300|-work|work|D:\Programming\Verilog\2014-1\MultiCycleCPU\FSM.v|
+R12
+Z72 n@f@s@m
+Z73 !s100 B]7Y4;Ln<ZTKb`]NRXjd80
+Z74 !s108 1398748286.816000
+Z75 !s107 D:\Programming\Verilog\2014-1\MultiCycleCPU\FSM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vIR
+Z76 !s100 3k19T]53gkbEOK^ikYfL@1
+Z77 IgkzG29zLAmVdH@2n_^P3a3
+Z78 VZdQ9;2A:m;QODT67a[^Kd3
+R4
+R5
+R6
+R7
+L0 1
+R8
+r1
+31
+R9
+R10
+R11
+R12
+n@i@r
+!i10b 1
+!s85 0
+!s101 -O0
+vMC_TOP
+Z79 IRUS;7?93IjC76D[?^ZCFF2
+Z80 V3eAWn:QiT8SV4aOSNn>Al3
+R4
+Z81 w1398748288
+Z82 8D:\Programming\Verilog\2014-1\MultiCycleCPU\MC_TOP.v
+Z83 FD:\Programming\Verilog\2014-1\MultiCycleCPU\MC_TOP.v
+L0 1
+R8
+r1
+31
+R12
+Z84 n@m@c_@t@o@p
+Z85 !s100 O6]@<`a7dS1]NJGTko00c1
+Z86 !s108 1398748288.183000
+Z87 !s107 D:\Programming\Verilog\2014-1\MultiCycleCPU\MC_TOP.v|
+Z88 !s90 -reportprogress|300|-work|work|D:\Programming\Verilog\2014-1\MultiCycleCPU\MC_TOP.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMDR
+Z89 !s100 [OmE8<4dT^:M0R_acbF0=3
+Z90 IZCE2Qi_aUezf^YgD4lYaS2
+Z91 VIb_W4h5SZ30b:3i71ko:;0
+R4
+R5
+R6
+R7
+L0 27
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z92 n@m@d@r
+!i10b 1
+!s85 0
+!s101 -O0
+vMEM
+Z93 I0MEP[dR58<HLX5o<B3gCV2
+Z94 ViPCO0mhhOLTC5eYX`WFi93
+R4
+Z95 w1398748283
+Z96 8D:\Programming\Verilog\2014-1\MultiCycleCPU\MEM.v
+Z97 FD:\Programming\Verilog\2014-1\MultiCycleCPU\MEM.v
+L0 14
+R8
+r1
+31
+R12
+Z98 n@m@e@m
+Z99 !s100 ezRUcZ>K37@O_cPjCC5Y62
+Z100 !s108 1398748288.464000
+Z101 !s107 D:\Programming\Verilog\2014-1\MultiCycleCPU\MEM.v|
+Z102 !s90 -reportprogress|300|-work|work|D:\Programming\Verilog\2014-1\MultiCycleCPU\MEM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMEMORY
+Z103 Ih7:b:gG4:oa2ACWQAf>gh1
+Z104 VC;g8nQ^kB1W8f0;XN0R>d2
+R4
+Z105 w1398732557
+Z106 8D:/Programming/Verilog/2014-1/MultiCycleCPU/MEM.v
+Z107 FD:/Programming/Verilog/2014-1/MultiCycleCPU/MEM.v
+L0 14
+R8
+r1
+31
+Z108 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/MEM.v|
+R12
+Z109 n@m@e@m@o@r@y
+Z110 !s100 a3KQk30YP_FS>gKd4`mio3
+Z111 !s108 1398739380.846000
+Z112 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/MEM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX2_1
+Z113 !s100 aLedD@LHQb@f`9nZ2:zbi3
+Z114 Iz<^2N5QCSCFlQzJTIBU313
+Z115 VC2<f0HkL51WBkEXddYNVS2
+R4
+Z116 w1398686522
+Z117 8D:/Programming/Verilog/2014-1/MultiCycleCPU/MUX.v
+Z118 FD:/Programming/Verilog/2014-1/MultiCycleCPU/MUX.v
+L0 74
+R8
+r1
+31
+Z119 !s108 1398748288.629000
+Z120 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/MUX.v|
+Z121 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/MUX.v|
+R12
+Z122 n@m@u@x2_1
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX2_1_5bits
+Z123 !s100 AI]f:jm@n30dh^f_D2FUM2
+Z124 IJnNO79[ZL3`nS<cZ2^[BH0
+Z125 V>NCZ<bTElKJikFkca0<Uj0
+R4
+R116
+R117
+R118
+L0 84
+R8
+r1
+31
+R119
+R120
+R121
+R12
+Z126 n@m@u@x2_1_5bits
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX32_1
+Z127 !s100 SCW?5LJGm2iGlJ:IzKcm[0
+Z128 IL_A_6LhTCCc]XcfUnegfd1
+Z129 VfR<Tn??FMM[5MfzLHBA9X1
+R4
+R116
+R117
+R118
+L0 2
+R8
+r1
+31
+R119
+R120
+R121
+R12
+Z130 n@m@u@x32_1
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX3_1
+Z131 !s100 1JHgg;a<MB:fQed^Hfa0k1
+Z132 I3Oo_6bF0]zkTWd9BLzoFR3
+Z133 V76B988:X^==1i81JmKlZK1
+R4
+R116
+R117
+R118
+L0 61
+R8
+r1
+31
+R119
+R120
+R121
+R12
+Z134 n@m@u@x3_1
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX4_1
+Z135 !s100 dC[R=CK[OWUD6[MYlR_6V2
+Z136 IBFE@lBLD]jTl^Bm9@LCV52
+Z137 V9c6S@QlK;K1?<DzkeTeU?2
+R4
+R116
+R117
+R118
+L0 47
+R8
+r1
+31
+R119
+R120
+R121
+R12
+Z138 n@m@u@x4_1
+!i10b 1
+!s85 0
+!s101 -O0
+vPC
+Z139 !s100 mFJ;Z??GMmDV;gL8TWcRU3
+Z140 IVgldQ;i>iDhKI[FB]1BHR1
+Z141 VCimIc0:5H[2VH^167]8bm3
+R4
+Z142 w1398683306
+Z143 8D:/Programming/Verilog/2014-1/MultiCycleCPU/PC.v
+Z144 FD:/Programming/Verilog/2014-1/MultiCycleCPU/PC.v
+L0 14
+R8
+r1
+31
+Z145 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/PC.v|
+R12
+n@p@c
+Z146 !s108 1398748289.095000
+Z147 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/PC.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRF
+Z148 !s100 m22mMPWD1ih:4_e?z0i8R2
+Z149 IF;zFz7T1fhO<?kVAZ`R<Q3
+Z150 VD7QCbKBeaaJBT@I^Ik:<G0
+R4
+R60
+R61
+R62
+L0 15
+R8
+r1
+31
+R63
+R64
+R65
+R12
+n@r@f
+!i10b 1
+!s85 0
+!s101 -O0
+vSEU
+Z151 !s100 ^2P62DQQ_O59Z2[XidTgP0
+Z152 I>legP2N@UndIBH@PzB3h81
+Z153 VOGQeMg_4XCZgg5d>QT;6@3
+R4
+Z154 w1396814350
+Z155 8D:/Programming/Verilog/2014-1/MultiCycleCPU/SEU.v
+Z156 FD:/Programming/Verilog/2014-1/MultiCycleCPU/SEU.v
+L0 14
+R8
+r1
+31
+Z157 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/SEU.v|
+R12
+Z158 n@s@e@u
+Z159 !s108 1398748289.756000
+Z160 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/SEU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb_FSM
+Z161 !s100 6@z4A3mXIK:0=eK]:1>Hl1
+Z162 IJ7mV2H@ae:G?J^N4>^le<2
+Z163 VY3Zg7C7PE;FamVQ2OamnD2
+R4
+Z164 w1398558472
+Z165 8D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_FSM.v
+Z166 FD:/Programming/Verilog/2014-1/MultiCycleCPU/tb_FSM.v
+L0 2
+R8
+r1
+31
+Z167 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_FSM.v|
+R12
+Z168 ntb_@f@s@m
+!i10b 1
+!s85 0
+Z169 !s108 1398748289.860000
+Z170 !s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_FSM.v|
+!s101 -O0
+vtb_MC_TOP
+!i10b 1
+Z171 !s100 J8[V;4lIm7FXhe:CHO5`;2
+Z172 IBjTjZjo95YO^383ePThK^2
+Z173 V22EBCn9;5d1;a:@0zN_JH1
+R4
+Z174 w1398700806
+Z175 8D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_MC_TOP.v
+Z176 FD:/Programming/Verilog/2014-1/MultiCycleCPU/tb_MC_TOP.v
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1398748290.009000
+!s107 D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_MC_TOP.v|
+Z177 !s90 -reportprogress|300|-work|work|D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_MC_TOP.v|
+!s101 -O0
+R12
+Z178 ntb_@m@c_@t@o@p

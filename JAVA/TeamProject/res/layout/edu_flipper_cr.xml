@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity" >
+
+    <ViewFlipper
+        android:id="@+id/edu_flipper_cr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+ 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/cr_1" />
+ 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/cr_2" />
+ 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/cr_3" />
+  
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/cr_4" />
+ 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/cr_5" />
+ 
+    </ViewFlipper>
+ 
+</LinearLayout>

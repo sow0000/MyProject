@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Programming\Assembly\week4\problem03\problem03-1.uvproj
+Project File Date:  10/10/2013
+
+<h2>Output:</h2>
+assembling problem03-1.s...
+problem03-1.s(22): warning: A1447W: Missing END directive at end of file, but found a label named END
+"problem03-1.s" - 0 Errors, 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=40 RO-data=0 RW-data=0 ZI-data=0  
+".\problem03-1.axf" - 0 Errors, 0 Warning(s).

@@ -1,0 +1,40 @@
+﻿Build started 2015-03-16 오후 2:53:49.
+     1>Project "D:\Programming\C++\[2015] VP\IP_programming\IP_programming.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\IP_programming.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ChildFrm.cpp FileOpenDlg.cpp IP_programming.cpp IP_programmingDoc.cpp IP_ProgrammingMyClass.cpp IP_programmingView.cpp MainFrm.cpp NoiseDlg.cpp WindowDlg.cpp
+         WindowDlg.cpp
+         IP_programmingView.cpp
+         IP_ProgrammingMyClass.cpp
+     1>d:\programming\c++\[2015] vp\ip_programming\ip_programmingmyclass.cpp(131): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\programming\c++\[2015] vp\ip_programming\ip_programmingmyclass.cpp(204): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+         Generating Code...
+     1>d:\programming\c++\[2015] vp\ip_programming\ip_programmingmyclass.cpp(176): warning C4700: uninitialized local variable 'meanR' used
+     1>d:\programming\c++\[2015] vp\ip_programming\ip_programmingmyclass.cpp(177): warning C4700: uninitialized local variable 'meanG' used
+     1>d:\programming\c++\[2015] vp\ip_programming\ip_programmingmyclass.cpp(178): warning C4700: uninitialized local variable 'meanB' used
+         Skipping... (no relevant changes detected)
+         NoiseDlg.cpp
+         MainFrm.cpp
+         FileOpenDlg.cpp
+         ChildFrm.cpp
+         IP_programmingDoc.cpp
+         IP_programming.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _DEBUG /D _AFXDLL /l"0x0409" /IDebug\ /nologo /fo"Debug\IP_programming.res" IP_programming.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programming\C++\[2015] VP\IP_programming\Debug\IP_programming.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"D:\Programming\C++\[2015] VP\IP_programming\Debug\IP_programming.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programming\C++\[2015] VP\IP_programming\Debug\IP_programming.lib" /MACHINE:X86 Debug\IP_programming.res
+         Debug\ChildFrm.obj
+         Debug\FileOpenDlg.obj
+         Debug\IP_programming.obj
+         Debug\IP_programmingDoc.obj
+         Debug\IP_ProgrammingMyClass.obj
+         Debug\IP_programmingView.obj
+         Debug\MainFrm.obj
+         Debug\NoiseDlg.obj
+         Debug\stdafx.obj
+         Debug\WindowDlg.obj
+         IP_programming.vcxproj -> D:\Programming\C++\[2015] VP\IP_programming\Debug\IP_programming.exe
+     1>Done Building Project "D:\Programming\C++\[2015] VP\IP_programming\IP_programming.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:19.42

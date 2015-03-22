@@ -1,0 +1,92 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Problem03_1, CODE, READONLY
+    2 00000000         
+    3 00000000         Main
+    4 00000000 E59F001C        LDR              r0,Address1 ;point start addres
+                                                            s
+    5 00000004 E3A01000        MOV              r1,#0       ;r1=0
+    6 00000008         
+    7 00000008         Loop                                 ;start of Loop
+    8 00000008 E2811001        ADD              r1,r1,#1    ;r1++
+    9 0000000C E0822001        ADD              r2,r2,r1    ;r2=r2+r1
+   10 00000010         
+   11 00000010 E351000A        CMP              r1,#10      ;compare r1 and 10
+   12 00000014 0A000000        BEQ              Endline     ;if r1==10, go to E
+                                                            ndline
+   13 00000018 EAFFFFFA        B                Loop        ;go to Loop
+   14 0000001C         
+   15 0000001C         Endline                              ;Endline
+   16 0000001C E5802000        STR              r2,[r0]     ;r0=r2
+   17 00000020 E3A0F000        MOV              pc,#0       ;
+   18 00000024         
+   19 00000024 00040000 
+                       Address1
+                               DCD              &00040000   ;Address1=0x0004000
+                                                            0
+   20 00000028         
+   21 00000028         END                                  ;End of file
+                       
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem03-
+1.d -o.\problem03-1.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --pred
+efine="__EVAL SETA 1" --list=.\problem03-1.lst problem03-1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Address1 00000024
+
+Symbol: Address1
+   Definitions
+      At line 19 in file problem03-1.s
+   Uses
+      At line 4 in file problem03-1.s
+Comment: Address1 used once
+END 00000028
+
+Symbol: END
+   Definitions
+      At line 21 in file problem03-1.s
+   Uses
+      None
+Comment: END unused
+Endline 0000001C
+
+Symbol: Endline
+   Definitions
+      At line 15 in file problem03-1.s
+   Uses
+      At line 12 in file problem03-1.s
+Comment: Endline used once
+Loop 00000008
+
+Symbol: Loop
+   Definitions
+      At line 7 in file problem03-1.s
+   Uses
+      At line 13 in file problem03-1.s
+Comment: Loop used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file problem03-1.s
+   Uses
+      None
+Comment: Main unused
+Problem03_1 00000000
+
+Symbol: Problem03_1
+   Definitions
+      At line 1 in file problem03-1.s
+   Uses
+      None
+Comment: Problem03_1 unused
+6 symbols
+337 symbols in table

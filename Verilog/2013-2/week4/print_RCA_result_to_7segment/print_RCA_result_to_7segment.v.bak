@@ -1,0 +1,13 @@
+module print_RCA_result_to_7segment(a, b, cin, dec_out);
+	input [3:0] a,b;
+	input cin;
+	output [13:0] dec_out;
+	
+	wire [3:0] a,b;
+	wire [6:0] dec_out0, dec_out1;
+	wire cin, co, s;
+	
+	RippleCarryAdder U0_RippleCarryAdder(.a(a),.b(b),.ci(cin),.s(s),.co(co));
+	seg_dec U1_seg_dec(.iHex(s), oSEG7)
+	
+endmodule

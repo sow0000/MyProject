@@ -1,0 +1,68 @@
+addi $v0, $v0, 2
+addi $v1, $v1, 3
+addi $a0, $a0, 4
+addi $a1, $a1, 5
+addi $a2, $a2, 6
+addi $a3, $a3, 7
+addi $t0, $t0, 8
+addi $t1, $t1, 9
+addi $t2, $t2, 10
+addi $t3, $t3, 11
+addi $t4, $t4, 12
+addi $t5, $t5, 13
+addi $t6, $t6, 14
+addi $t7, $t7, 15
+addi $s0, $s0, 16
+addi $s1, $s1, 17
+addi $s2, $s2, 18
+addi $s3, $s3, 19
+addi $s4, $s4, 20
+addi $s5, $s5, 21
+addi $s6, $s6, 22
+addi $s7, $s7, 23
+addi $t8, $t8, 24
+addi $t9, $t9, 25
+addi $gp, $gp, 28
+addi $sp, $sp, 29
+addi $fp, $fp, 30
+addi $ra, $ra, 31
+sw $v0, 0($zero)
+sw $v1, 4($zero)
+sw $a0, 8($zero)
+sw $a1, 12($zero)
+sw $a2, 16($zero)
+sw $a3, 20($zero)
+sw $t0, 24($zero)
+sw $t1, 28($zero)
+sw $t2, 32($zero)
+sw $t3, 36($zero)
+sw $t4, 40($zero)
+sw $t5, 44($zero)
+sw $t6, 48($zero)
+sw $t7, 52($zero)
+sw $s0, 56($zero)
+sw $s1, 60($zero)
+sw $s2, 64($zero)
+sw $s3, 68($zero)
+sw $s4, 72($zero)
+sw $s5, 76($zero)
+sw $s6, 80($zero)
+sw $s7, 84($zero)
+sw $t8, 88($zero)
+sw $t9, 92($zero)
+sw $gp, 96($zero)
+sw $sp, 100($zero)
+sw $fp, 104($zero)
+sw $ra, 108($zero)
+sub $v0, $v1, $v1
+lw $v0, 4($a0)
+slt $s1, $s3, $s4
+slt $s1, $s4, $s3
+beq $s5, $s4, 20
+j 65
+beq $s4, $s2, 30
+beq $s3, $s1, 20
+beq $s5, $s5, 2
+sub $s7, $s5, $s4
+sub $s6, $s3, $s3
+j 66

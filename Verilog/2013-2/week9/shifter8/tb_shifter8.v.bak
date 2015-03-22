@@ -1,0 +1,8 @@
+`timescale 1ns/100ps
+
+module tb_shifter8;
+	reg clk,reset_n;
+	reg [2:0] op;
+	reg [1:0] shamt;
+	reg [7:0] d_in;
+	wire [7:0] d_out;

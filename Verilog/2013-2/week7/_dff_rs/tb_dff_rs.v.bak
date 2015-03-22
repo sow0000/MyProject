@@ -1,0 +1,36 @@
+`timescale 1ns/100ps
+
+module tb_dff_rs;
+	reg tb_clk,tb_set_n,tb_reset_n,tb_d;
+	wire tb_q;
+	
+	parameter STEP=10;
+	
+	_dff_rs U0_dff_rs(.clk(tb_clk),.set_n(tb_set_n),.reset_n(tb_reset_n),.q(tb_q));
+	
+	always#(STEP) tb_clk=~tb_clk;
+	
+	initial
+	begin
+		tb_clk=0; tb_set_n=0; tb_reset_n=0; tb_d=0;
+		#(STEP-7) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1; tb_reset_n=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1; tb_set_n=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) tb_d=0;
+		#(STEP) tb_d=1;
+		#(STEP) $stop;
+	end
+endmodule

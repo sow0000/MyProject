@@ -1,0 +1,61 @@
+Curent Memory Allocation State
+=================================
+Available memory space : 130
+1 : 390 - 399
+2 : 400 - 419
+3 : 530 - 599
+4 : 770 - 799
+
+Allocated memory space : 670
+1 : 0 - 99
+2 : 100 - 199
+3 : 200 - 259
+4 : 260 - 309
+5 : 310 - 389
+6 : 420 - 529
+7 : 600 - 769
+
+coalescing count : 4
+memory alloction failure count : 3
+
+
+Curent Memory Allocation State
+=================================
+Available memory space : 360
+1 : 100 - 199
+2 : 260 - 399
+3 : 400 - 419
+4 : 530 - 599
+5 : 770 - 799
+
+Allocated memory space : 440
+1 : 0 - 99
+2 : 200 - 259
+3 : 420 - 529
+4 : 600 - 769
+
+coalescing count : 1
+memory alloction failure count : 0
+
+
+Curent Memory Allocation State
+=================================
+Available memory space : 130
+1 : 390 - 399
+2 : 400 - 419
+3 : 530 - 599
+4 : 770 - 799
+
+Allocated memory space : 670
+1 : 0 - 99
+2 : 100 - 199
+3 : 200 - 259
+4 : 260 - 309
+5 : 310 - 389
+6 : 420 - 529
+7 : 600 - 769
+
+coalescing count : 4
+memory alloction failure count : 3
+
+

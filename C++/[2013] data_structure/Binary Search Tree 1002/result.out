@@ -1,0 +1,124 @@
+PRINTALL error - No data
+
+Command error - Command
+INSER JungHwan Lee 013-4523 52 wolgye-dong 
+
+Input error - Last name
+INSERT JungHwan 013-4523 52 wolgye-dong 
+
+Input error - Street address
+INSERT JungHwan Lee 013-4523 
+
+Input error - First name
+INSERT jungHwan Lee 013-4523 52 wolgye-dong 
+
+Input error - Last name
+INSERT JungHwan lee 013-4523 52 wolgye-dong 
+
+Input error - Phone-number
+INSERT Jung Hwan Lee 013-4523 52 wolgye-dong 
+
+Input error - Phone-number
+INSERT JungHwan Lee 0134-4523 52 wolgye-dong 
+
+Input error - Phone-number
+INSERT JungHwan Lee 013-45234 52 wolgye-dong 
+
+Input error - Phone-number
+INSERT JungHwan Lee 013-452a 52 wolgye-dong 
+
+Input error - Phone-number
+INSERT JungHwan Lee 01-34523 52 wolgye-dong 
+
+Input error - Phone-number
+INSERT JungHwan Lee 01304523 52 wolgye-dong 
+
+Input error - Street address
+INSERT JungHwan Lee 013-4523 a2 wolgye-dong 
+
+Input error - Street address
+INSERT JungHwan Lee 013-4523 5-2 wolgye-dong 
+
+Input error - Dong address
+INSERT JungHwan Lee 013-4523 52 Wolgye-dong 
+
+Input error - Dong address
+INSERT JungHwan Lee 013-4523 52 wolgye-donG 
+
+Input error - Dong address
+INSERT JungHwan Lee 013-4523 52 -wolgyedong 
+
+Input error - Dong address
+INSERT JungHwan Lee 013-4523 52 wolgyedong- 
+
+Input error - Dong address
+INSERT JungHwan Lee 013-4523 52 wolgyed-ong 
+
+INSERT error - Duplicate records
+INSERT SungHyun Choi 304-5728 714 ssangmun-dong
+
+INSERT error - Duplicate records
+INSERT SungHyun Choi 304-5728 777 shindang-dong
+
+UPDATE error - Require Phone_number (Duplicate records)
+UPDATE YongHoon Cha 308-2328 18 shindang-dong
+
+Input error - Phone-number
+UPDATE YongHoon Cha 304-2328 308-23284 18 shindang-dong 
+
+Input error - Phone-number
+UPDATE YongHoon Cha 304-23284 308-2328 18 shindang-dong 
+
+UPDATE error - Can't find : Cha YongHoon 123-1234
+UPDATE YongHoon Cha 123-1234 308-2328 18 shindang-dong
+
+UPDATE error - Can't find : Cha Yonghan 304-2328
+UPDATE Yonghan Cha 304-2328 308-2328 18 shindang-dong
+
+Input error - First name
+DELETE yongHoon Cha 
+
+DELETE error - Require Phone_number (Duplicate records)
+DELETE YongHoon Cha 
+
+DELETE error - Can't find : Cha YongHoon 123-1234
+DELETE YongHoon Cha 123-1234 
+
+Input error - First name
+PRINT yongHoon Cha 
+
+PRINT error - Require Phone_number (Duplicate records)
+PRINT YongHoon Cha 
+
+PRINT error - Can't find : Cha YongHoon 405-7542
+PRINT YongHoon Cha 405-7542 
+
+===========================================================================
+ NAME                    Phone-number             Address
+===========================================================================
+Choi SungHyun            304-5728                 714 ssangmun-dong
+
+Input error - Last name
+PRINTNAME hong 
+
+PRINTNAME error - Can't find : Hong
+PRINTNAME Hong 
+
+===========================================================================
+ NAME                    Phone-number             Address
+===========================================================================
+Kim Hyun                 231-4325                 213 wolgye-dong
+Kim WonYoung             205-7854                 1190 myunmok-dong
+
+===========================================================================
+ NAME                    Phone-number             Address
+===========================================================================
+Cha YongHoon             308-2328                 18 shindang-dong
+Cha YongHoon             405-7541                 255 wolgye-dong
+Cha YongHoon             405-7543                 255 wolgye-dong
+Cha YongHoon             405-7545                 255 wolgye-dong
+Choi SungHyun            304-5728                 714 ssangmun-dong
+Kim Hyun                 231-4325                 213 wolgye-dong
+Kim WonYoung             205-7854                 1190 myunmok-dong
+Lee WooShin              216-5728                 134 bupyeong-dong
+

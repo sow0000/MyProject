@@ -1,0 +1,12 @@
+Traffic Light Controller
+무 fsm -> 출력 state
+state transition table
+q1q0	d1d0
+00	01
+00	00
+01	10
+10	11
+10	10
+11	00
+디논 6 pdf에 ㄷㅏ잇음ㅋ........하..
+인생무상..

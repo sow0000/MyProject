@@ -1,0 +1,182 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 0000000D 
+                       CR      EQU              0x0D        ;End of string
+    2 00000000 00000020 
+                       SPC     EQU              0x20        ;Space bar
+    3 00000000         
+    4 00000000                 AREA             Problem, CODE, READONLY
+    5 00000000                 ENTRY
+    6 00000000         
+    7 00000000         Main
+    8 00000000 E59F6040        LDR              r6, =Arr1   ;Address of Arr1
+    9 00000004 E59F7040        LDR              r7, =Arr2   ;Address of Arr2
+   10 00000008 E0255005        EOR              r5, r5, r5  ;Clear r5
+   11 0000000C         
+   12 0000000C E896001F        LDMFD            r6, {r0-r4} ;Load string of Arr
+                                                            1
+   13 00000010 E1A0E00F        MOV              lr, pc      ;Point next address
+                                                             of CopyArr
+   14 00000014 EA000001        B                CopyArr     ;Go to CopyArr 
+   15 00000018         
+   16 00000018 E54F5008        STRB             r5, K       ;Save count number
+   17 0000001C         
+   18 0000001C E3A0F000        MOV              pc,#0
+   19 00000020         
+   20 00000020         CopyArr                              ;CopyArr
+   21 00000020 E92D401F        STMFD            sp!, {r0-r4, lr} ;Store r0~r4 a
+                                                            nd lr in stack
+   22 00000024         
+   23 00000024         Loop
+   24 00000024 E4D68001        LDRB             r8, [r6], #1 
+                                                            ;First data of Arr1
+                                                            
+   25 00000028 E3580001        CMP              r8,#1       ;r8==K?
+   26 0000002C 0AFFFFFC        BEQ              Loop        ;go to Loop assignm
+                                                            ent
+   27 00000030         
+   28 00000030 E358000D        CMP              r8, #CR     ;r8==CR?
+   29 00000034 08BD801F        LDMFDEQ          sp!, {pc,r0-r4} ;Reset values a
+                                                            nd exit CopyArr
+   30 00000038         
+   31 00000038 E3580020        CMP              r8, #SPC    ;r8==SPC?
+   32 0000003C 12855001        ADDNE            r5, r5, #1  ;Add count number
+   33 00000040 14C78001        STRBNE           r8, [r7], #1 ;Copy in Arr2
+   34 00000044         
+   35 00000044 EAFFFFF6        BAL              Loop        ;Go to Loop
+   36 00000048         
+   37 00000048 00000000 
+              00000000         AREA             dataArray, DATA
+   38 00000000         
+   39 00000000         K                                    ;Size of Arr2
+   40 00000000 01              DCB              1           ;K=1
+   41 00000001         
+   42 00000001         Arr1                                 ;Original string
+   43 00000001 48 65 6C 
+              6C 6F 2C 
+              20 57 6F 
+              72 6C 64 
+              0D               DCB              "Hello, World", CR ;Arr1={Hello
+                                                            , World}
+   44 0000000E 00 00           ALIGN
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   45 00000010         
+   46 00000010         Arr2                                 ;Copied string
+   47 00000010 00              DCB              0           ;Arr2={null}
+   48 00000011                 END                          ;End of file
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem.d 
+-o.\problem.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="_
+_EVAL SETA 1" --list=.\problem.lst problem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CopyArr 00000020
+
+Symbol: CopyArr
+   Definitions
+      At line 20 in file problem.s
+   Uses
+      At line 14 in file problem.s
+Comment: CopyArr used once
+Loop 00000024
+
+Symbol: Loop
+   Definitions
+      At line 23 in file problem.s
+   Uses
+      At line 26 in file problem.s
+      At line 35 in file problem.s
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 7 in file problem.s
+   Uses
+      None
+Comment: Main unused
+Problem 00000000
+
+Symbol: Problem
+   Definitions
+      At line 4 in file problem.s
+   Uses
+      None
+Comment: Problem unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Arr1 00000001
+
+Symbol: Arr1
+   Definitions
+      At line 42 in file problem.s
+   Uses
+      At line 8 in file problem.s
+Comment: Arr1 used once
+Arr2 00000010
+
+Symbol: Arr2
+   Definitions
+      At line 46 in file problem.s
+   Uses
+      At line 9 in file problem.s
+Comment: Arr2 used once
+K 00000000
+
+Symbol: K
+   Definitions
+      At line 39 in file problem.s
+   Uses
+      At line 16 in file problem.s
+Comment: K used once
+dataArray 00000000
+
+Symbol: dataArray
+   Definitions
+      At line 37 in file problem.s
+   Uses
+      None
+Comment: dataArray unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CR 0000000D
+
+Symbol: CR
+   Definitions
+      At line 1 in file problem.s
+   Uses
+      At line 28 in file problem.s
+      At line 43 in file problem.s
+
+SPC 00000020
+
+Symbol: SPC
+   Definitions
+      At line 2 in file problem.s
+   Uses
+      At line 31 in file problem.s
+Comment: SPC used once
+2 symbols
+343 symbols in table

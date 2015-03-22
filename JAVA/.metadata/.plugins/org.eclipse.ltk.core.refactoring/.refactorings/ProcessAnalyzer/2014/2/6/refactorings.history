@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ProcessAnalyzer/res/drawable/예나-잠금화면(인턴).jpg&apos; to &apos;test.jpg&apos;" description="Rename resource &apos;예나-잠금화면(인턴).jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/drawable/예나-잠금화면(인턴).jpg" name="test.jpg" stamp="1391340118732" updateReferences="true"/>
+</session>

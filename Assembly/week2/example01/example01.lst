@@ -1,0 +1,46 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E3A0100A        MOV              r1, #10
+    6 00000004 E3A02003        MOV              r2, #3
+    7 00000008 E0810002        ADD              r0, r1, r2
+    8 0000000C E1500001        CMP              r0, r1
+    9 00000010 20800002        ADDCS            r0, r0, r2
+   10 00000014 E1510000        CMP              r1, r0
+   11 00000018 20810001        ADDCS            r0, r1, r1
+   12 0000001C         
+   13 0000001C                 END
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\example01.
+d -o.\example01.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\example01.lst example01.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file example01.s
+   Uses
+      None
+Comment: ARMex unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file example01.s
+   Uses
+      None
+Comment: start unused
+2 symbols
+333 symbols in table

@@ -1,0 +1,84 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E3A0000A        MOV              r0, #10     ;Set up parameters
+    6 00000004 E3A01003        MOV              r1, #3
+    7 00000008         
+    8 00000008 E59F201C        LDR              r2, TEMPADDR1
+    9 0000000C E1A0E00F        MOV              lr, pc      ;save return addres
+                                                            s
+   10 00000010 EA000002        B                doadd       ;Call subroutine
+   11 00000014 E0400001        SUB              r0, r0, r1  ;subtraction
+   12 00000018 E5820000        STR              r0, [r2]    ;store on mem
+   13 0000001C         
+   14 0000001C         stop
+   15 0000001C E3A0F000        MOV              pc,#0
+   16 00000020         
+   17 00000020         doadd
+   18 00000020 E0800001        ADD              r0, r0, r1  ;addition
+   19 00000024 E4820004        STR              r0, [r2], #4 ;store on mem
+   20 00000028 E1A0F00E        MOV              pc, lr      ;return
+   21 0000002C         
+   22 0000002C 00040000 
+                       TEMPADDR1
+                               &                &00040000
+   23 00000030         
+   24 00000030                 END
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\exercise01
+.d -o.\exercise01.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predef
+ine="__EVAL SETA 1" --list=.\exercise01.lst exercise01.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file exercise01.s
+   Uses
+      None
+Comment: ARMex unused
+TEMPADDR1 0000002C
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 22 in file exercise01.s
+   Uses
+      At line 8 in file exercise01.s
+Comment: TEMPADDR1 used once
+doadd 00000020
+
+Symbol: doadd
+   Definitions
+      At line 17 in file exercise01.s
+   Uses
+      At line 10 in file exercise01.s
+Comment: doadd used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file exercise01.s
+   Uses
+      None
+Comment: start unused
+stop 0000001C
+
+Symbol: stop
+   Definitions
+      At line 14 in file exercise01.s
+   Uses
+      None
+Comment: stop unused
+5 symbols
+336 symbols in table

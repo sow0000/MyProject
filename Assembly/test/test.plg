@@ -1,0 +1,12 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Programming\Assembly\test\test.uvproj
+Project File Date:  09/12/2013
+
+<h2>Output:</h2>
+assembling test.s...
+test.s(9): warning: A1608W: MOV pc,<rn> instruction used, but BX <rn> is preferred
+"test.s" - 0 Errors, 1 Warning(s).

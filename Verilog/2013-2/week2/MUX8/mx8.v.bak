@@ -1,0 +1,31 @@
+moudle mx8(y,a,b,c,d,e,f,g,h,s0,s1,s2);
+	input a,b,c,d,e,f,g,h,s0,s1,s2;
+	output y;
+	
+	
+	
+endmodule
+
+module mx2(y,d0,d1,s);
+	input d0,d1,s;
+	output y;
+	wire sb,w0,w1;
+	
+	iv iv0(.a(s),.y(sb));
+	nd2 nd20(.a(d0),.b(sb),.y(w0));
+	nd2 nd21(.a(d1),.b(s),.y(w1));
+	nd2 nd22(.a(w0),.b(w1),.y(y));
+	
+endmodule
+
+module iv(a,y);
+	input a;
+	output y;
+	assign y=~a;
+endmodule
+
+module nd2(a,b,y);
+	input a,b;
+	output y;
+	assign y=~(a&b);
+endmodule

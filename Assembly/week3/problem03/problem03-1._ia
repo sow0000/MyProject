@@ -1,0 +1,4 @@
+--cpu ARM9E --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC
+-I C:\Keil\ARM\CMSIS\Include
+--list .\problem03-1.lst --xref -o .\problem03-1.o --depend .\problem03-1.d "problem03-1.s"

@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////////////////
+//	TITLE : Memory
+//	FILE : MEM.v	
+//	ORGANIZATION : Kwangwoon Univ. Computer Engineering	
+//	STUDENT ID : 2010720092, 2010720117	
+//	STUDENT NAME : Hyunjae Lee, Seongjoong Kim	
+//	PLATFORM : Windows 7	
+//	SIMULATOR : ModelSim PE Student Edition 10.3	
+//	COMPILER : ModelSim PE Student Edition 10.3	
+//	DESCRIPTION : This module defines Memory. (IM + DM)
+//								Read or Write for each memory.
+//	LAST UPDATE : 04.28, 2014	
+////////////////////////////////////////////////////////////////
+module MEM(i_clk, i_rst_n, MemRead, MemWrite, i_addr, i_WriteData, o_MemData);
+	input i_clk, i_rst_n, MemRead, MemWrite;
+	input [31:0] i_addr, i_WriteData;
+	output reg [31:0] o_MemData;
+
+	reg [7:0] mem[2047:0]; // IM(0~1023) + DM(1024~2047)
+
+always @ (i_addr or i_rst_n)
+begin
+	if(i_rst_n == 0)
+	begin 
+		$readmemb("inst.txt", mem); // Instruction Memory
+		$readmemb("data.txt", mem, 1024); // Data Memory
+	end	// initialize memory
+	
+	// Read Memory Part
+	else if(MemRead == 1'b1) // if Read Signal is ON,
+	begin
+		o_MemData[7:0] <= mem[i_addr+3][7:0];		
+		o_MemData[15:8] <= mem[i_addr+2][7:0];		
+		o_MemData[23:16] <= mem[i_addr+1][7:0];
+		o_MemData[31:24] <= mem[i_addr][7:0];
+	end // Output is memory by address.
+
+	// Write Memory Part
+	else if(MemWrite == 1'b1) // if Write Signal is ON,
+	begin
+		mem[i_addr][7:0] <= i_WriteData[31:24];
+		mem[i_addr+1][7:0] <= i_WriteData[23:16];
+		mem[i_addr+2][7:0] <= i_WriteData[15:8];
+		mem[i_addr+3][7:0] <= i_WriteData[7:0];
+  end  // Insert a input data to Memory.
+end
+endmodule
+

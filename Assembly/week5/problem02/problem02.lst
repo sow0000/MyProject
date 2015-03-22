@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Problem02, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E3A00000        MOV              r0, #0      ;r0=0
+    6 00000004 E3A01001        MOV              r1, #1      ;r1=1
+    7 00000008 E3A02002        MOV              r2, #2      ;r2=2
+    8 0000000C E3A03003        MOV              r3, #3      ;r3=3
+    9 00000010 E3A04004        MOV              r4, #4      ;r4=4
+   10 00000014 E3A05005        MOV              r5, #5      ;r5=5
+   11 00000018 E3A06006        MOV              r6, #6      ;r6=6
+   12 0000001C E3A07007        MOV              r7, #7      ;r7=7
+   13 00000020         
+   14 00000020 E1A0E00F        MOV              lr, pc      ;save return addres
+                                                            s
+   15 00000024 EA00000D        B                doRegister  ;go to doRegister
+   16 00000028 E3180001        TST              r8, #1      ;check odd or even
+   17 0000002C 0A000004        BEQ              evensub     ;go to evensub
+   18 00000030 E0488001        SUB              r8, r8, r1  ;subtract odd-index
+                                                            ed registers
+   19 00000034 E0488003        SUB              r8, r8, r3
+   20 00000038 E0488005        SUB              r8, r8, r5
+   21 0000003C E0488007        SUB              r8, r8, r7
+   22 00000040 EA000003        B                stop        ;go to stop
+   23 00000044         
+   24 00000044         evensub                              ;evensub
+   25 00000044 E0488000        SUB              r8, r8, r0  ;subtract even-inde
+                                                            xed registers
+   26 00000048 E0488002        SUB              r8, r8, r2
+   27 0000004C E0488004        SUB              r8, r8, r4
+   28 00000050 E0488006        SUB              r8, r8, r6
+   29 00000054         
+   30 00000054         stop                                 ;stop
+   31 00000054 E59F9044        LDR              r9, TEMPADDR1 ;point start addr
+                                                            ess
+   32 00000058 E5898000        STR              r8, [r9]
+   33 0000005C E3A0F000        MOV              pc, #0
+   34 00000060         
+   35 00000060         doRegister
+   36 00000060 E92D40FF        STMFD            sp!, {lr, r0-r7} 
+                                                            ;PUSH into stack
+   37 00000064 E8BD0042        LDMFD            sp!, {r1,r6} ;POP from stack
+   38 00000068 E8BD0085        LDMFD            sp!, {r0,r2,r7} ;POP from stack
+                                                            
+   39 0000006C E8BD0038        LDMFD            sp!, {r3-r5} ;POP from stack
+   40 00000070         
+   41 00000070 E0888001        ADD              r8, r8, r1  ;r1
+   42 00000074 E0888082        ADD              r8, r8, r2, LSL #1 ;r2
+   43 00000078 E0888083        ADD              r8, r8, r3, LSL #1 ;r3
+   44 0000007C E0888003        ADD              r8, r8, r3
+   45 00000080 E0888104        ADD              r8, r8, r4, LSL #2 ;r4
+   46 00000084 E0888105        ADD              r8, r8, r5, LSL #2 ;r5
+   47 00000088 E0888005        ADD              r8, r8, r5
+   48 0000008C E0888106        ADD              r8, r8, r6, LSL #2 ;r6
+   49 00000090 E0888086        ADD              r8, r8, r6, LSL #1
+   50 00000094 E0888187        ADD              r8, r8, r7, LSL #3 ;r7
+   51 00000098 E0488007        SUB              r8, r8, r7
+   52 0000009C         
+   53 0000009C E83D80FF        LDMFA            sp!, {pc, r0-r7} 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            ;POP from stack
+   54 000000A0         
+   55 000000A0 00040000 
+                       TEMPADDR1
+                               &                &00040000   ;TEMPADDR1=0x000400
+                                                            00
+   56 000000A4         
+   57 000000A4                 END                          ;End of file
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem02.
+d -o.\problem02.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\problem02.lst problem02.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Problem02 00000000
+
+Symbol: Problem02
+   Definitions
+      At line 1 in file problem02.s
+   Uses
+      None
+Comment: Problem02 unused
+TEMPADDR1 000000A0
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 55 in file problem02.s
+   Uses
+      At line 31 in file problem02.s
+Comment: TEMPADDR1 used once
+doRegister 00000060
+
+Symbol: doRegister
+   Definitions
+      At line 35 in file problem02.s
+   Uses
+      At line 15 in file problem02.s
+Comment: doRegister used once
+evensub 00000044
+
+Symbol: evensub
+   Definitions
+      At line 24 in file problem02.s
+   Uses
+      At line 17 in file problem02.s
+Comment: evensub used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem02.s
+   Uses
+      None
+Comment: start unused
+stop 00000054
+
+Symbol: stop
+   Definitions
+      At line 30 in file problem02.s
+   Uses
+      At line 22 in file problem02.s
+Comment: stop used once
+6 symbols
+337 symbols in table

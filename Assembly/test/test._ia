@@ -1,0 +1,4 @@
+--cpu ARM9E --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC
+-I C:\Keil\ARM\CMSIS\Include
+--list .\test.lst --xref -o .\test.o --depend .\test.d "test.s"

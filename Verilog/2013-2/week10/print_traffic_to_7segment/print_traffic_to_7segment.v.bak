@@ -1,0 +1,14 @@
+module print_traffic_to_7segment(clk,reset_n,Ta,T,dec_out);
+	input clk,reset_n,Ta,Tb; //clk: clock pulse; //reset_n : reset switch; //Ta,Tb : Traffic
+	output [27:0] dec_out; //output with 7segment
+	
+	wire [1:0] w_La; //wire of Light A
+	wire [1:0] w_Lb; //wire of Light B
+	
+	tl_cntr U0_cntr(.clk(clk),.reset_n(reset_n),.Ta(Ta),.Tb(Tb),.La(w_La),.Lb(w_Lb));
+	seg_dec U1_dec(.iHEX({3'b0,w_La[1]}),.oSEG7(dec_out[27:21]));
+	seg_dec U2_dec(.iHEX({3'b0,w_La[0]}),.oSEG7(dec_out[20:14]));
+	seg_dec U3_dec(.iHEX({3'b0,w_Lb[1]}),.oSEG7(dec_out[13:7]));
+	seg_dec U4_dec(.iHEX({3'b0,w_Lb[0]}),.oSEG7(dec_out[6:0]));
+
+endmodule //End of module

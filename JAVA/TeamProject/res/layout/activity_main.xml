@@ -1,0 +1,197 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity" >
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:textSize="50sp"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/title" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/emercall"
+        android:gravity="center"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/emer_call"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold" />
+    
+    <ImageView 
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/background_main"/>
+    
+    <Button
+        android:id="@+id/emer_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emer_4"
+        android:layout_alignBottom="@+id/emer_2"
+        android:text="@string/emer_1"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/shelter"
+        android:background="#00000000" />
+
+    <Button
+        android:id="@+id/emer_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/emer_5"
+        android:layout_marginBottom="100dp"
+        android:text="@string/emer_2"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/siren"
+        android:background="#00000000" />
+
+    <Button
+        android:id="@+id/emer_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/emer_6"
+        android:layout_alignBottom="@+id/emer_2"
+        android:text="@string/emer_3"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/flash"
+        android:background="#00000000" />
+    
+    <Button
+        android:id="@+id/emer_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp"
+        android:layout_alignBottom="@+id/emer_5"
+        android:text="@string/emer_4"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/sms"
+        android:background="#00000000" />
+    
+    <Button
+        android:id="@+id/emer_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:text="@string/emer_5"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/emer_radio"
+        android:background="#00000000" />
+
+    <Button
+        android:id="@+id/emer_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35dp"
+        android:layout_alignBottom="@+id/emer_5"
+        android:text="@string/emer_6"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/sns"
+        android:background="#00000000" />
+    
+    <Button
+        android:id="@+id/emer_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emer_4"
+        android:layout_alignBottom="@+id/emer_8"
+        android:text="@string/edu_mode"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/edu"
+        android:background="#00000000" />
+    
+    <Button
+        android:id="@+id/emer_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/emer_5"
+        android:layout_marginTop="100dp"
+        android:text="@string/emer_8"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/emer_tv"
+        android:background="#00000000" />
+
+    <Button
+        android:id="@+id/emer_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/emer_6"
+        android:layout_alignBottom="@+id/emer_8"
+        android:text="@string/emer_9"
+        android:textColor="#FFFFE0"
+        android:textStyle="bold"
+        android:shadowColor="#298eff"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:drawableTop="@drawable/number"
+        android:background="#00000000" />
+
+</RelativeLayout>

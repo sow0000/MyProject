@@ -1,0 +1,231 @@
+////////////////////////////////////////////////////////////////
+//	TITLE : Finite State Machine
+//	FILE : FSM.v	
+//	ORGANIZATION : Kwangwoon Univ. Computer Engineering
+//	STUDENT ID : 2010720092, 2010720117
+//	STUDENT NAME : Hyunjae Lee, Seongjoong Kim		
+//	PLATFORM : Windows 7
+//	SIMULATOR : ModelSim PE Student Edition 10.3	
+//	COMPILER : ModelSim PE Student Edition 10.3	
+//	DESCRIPTION : This module defines FSM.	
+//								This FSM have total 12 state.
+//	LAST UPDATE : 04.28, 2014
+////////////////////////////////////////////////////////////////
+module FSM(i_clk, i_rst_n, i_op, 
+           PCWriteCond, PCWrite, IorD, MemRead, MemWrite, MemtoReg, 
+					 IRWrite, PCSource, ALUOp, ALUSrcB, ALUSrcA, RegWrite, RegDst);
+  
+input i_clk, i_rst_n; // clock, reset
+input [5:0] i_op; // opcode
+
+output reg PCWriteCond, PCWrite, IorD, MemRead, MemWrite, MemtoReg, 
+					 IRWrite, ALUSrcA, RegWrite, RegDst;
+output reg [1:0] PCSource, ALUOp, ALUSrcB; // Main Control Signal
+
+reg [3:0] cur_state;
+reg [3:0] next_state;
+
+parameter S0 = 4'b0000; // Instruction fetch
+parameter S1 = 4'b0001; // Instruction decode/register fetch
+parameter S2 = 4'b0010; // Memory address computation
+parameter S3 = 4'b0011; // Memory access
+parameter S4 = 4'b0100; // Write-back step
+parameter S5 = 4'b0101; // Memory access
+parameter S6 = 4'b0110; // Execution
+parameter S7 = 4'b0111; // R-type completion
+parameter S8 = 4'b1000; // Branch completion
+parameter S9 = 4'b1001; // Jump completion
+parameter S10 = 4'b1010; // Addi Execution
+parameter S11 = 4'b1011; // Addi completion
+// total 12 STATE parameters
+
+parameter R_format = 6'b000000;
+parameter lw = 6'b100011;
+parameter sw = 6'b101011;
+parameter beq = 6'b000100;
+parameter addi = 6'b001000;
+parameter j = 6'b000010; 
+// six instruction opcode
+          
+always@(posedge i_clk or negedge i_rst_n)
+begin
+	if(i_rst_n == 0) // reset is ON
+		cur_state <= S0; // state is S0
+	else // reset is OFF
+		cur_state <= next_state; // current state is next state
+end
+
+// Next State Logic
+always @(i_op or cur_state)
+begin
+	case(cur_state)
+		S0 : next_state <= S1;
+
+		S1 : 
+		begin
+			case(i_op)
+				lw : next_state <= S2; // op == lw
+				sw : next_state <= S2; // op == sw
+				R_format : next_state <= S6; // op == R-type
+				beq : next_state <= S8; // op == BEQ
+				j : next_state <= S9; // op == J
+				addi : next_state <= S10; // op == addi
+				default : next_state <= cur_state;
+			endcase
+		end
+
+		S2 :
+		begin 
+			case(i_op)
+				lw : next_state <= S3;
+				sw : next_state <= S5;
+				default : next_state <= cur_state;
+			endcase
+		end
+
+		S3 : next_state <= S4;
+
+		S4 : next_state <= S0;
+
+		S5 : next_state <= S0;
+
+		S6 : next_state <= S7;
+
+		S7 : next_state <= S0;
+
+		S8 : next_state <= S0;
+
+		S9 : next_state <= S0;
+
+		S10 : next_state <= S11;
+
+		S11 : next_state <= S0;
+
+		default next_state <= S0;
+	endcase
+end
+
+// Output State Logic
+always @(cur_state)
+begin
+	case(cur_state)
+		S0 :  // Instruction fetch
+		begin
+			MemRead <= 1;
+			ALUSrcA <= 0;
+			IorD <= 0;
+			IRWrite <= 1;
+			ALUSrcB <= 2'b01;
+			ALUOp <= 2'b00;
+			PCWrite <= 1;
+			PCSource <= 2'b00;
+		end
+
+		S1 : // Instruction decode/register fetch
+		begin
+			ALUSrcA <= 0;
+			ALUSrcB <= 2'b11;
+			ALUOp <= 2'b00;
+
+			PCWrite <= 0;
+			PCWriteCond <= 0;
+			IorD <= 0; 
+			MemRead <= 0;
+			MemWrite <= 0; 
+			MemtoReg <= 0; 
+			IRWrite <= 0;
+			RegWrite <= 0; 
+			RegDst <= 0;
+			PCSource <= 2'b00;
+		end
+
+		S2 : // Memory address computation
+		begin
+			ALUSrcA <= 1;
+			ALUSrcB <= 2'b10;
+			ALUOp <= 2'b00;
+		end
+
+    S3 : // Memory access
+    begin
+      MemRead <= 1;
+      IorD <= 1;
+    end
+
+		S4 : // Write-back step
+		begin
+			RegDst <= 0;
+			RegWrite <= 1;
+			MemtoReg <= 1;
+		end
+
+		S5 : // Memory access
+		begin
+			MemWrite <= 1;
+			MemRead <= 0;
+			IorD <= 1;
+		end
+
+		S6 : // Execution
+		begin
+			ALUSrcA <= 1;
+			ALUSrcB <= 2'b00;
+			ALUOp <= 2'b10;
+		end
+
+		S7 : // R-type completion
+		begin
+			RegDst <= 1;
+			RegWrite <= 1;
+			MemtoReg <= 0;
+		end
+
+		S8 : // Branch completion
+		begin
+			ALUSrcA <= 1;
+			ALUSrcB <= 2'b00;
+			ALUOp <= 2'b01;
+			PCWriteCond <= 1;
+			PCSource <= 2'b01;
+		end
+
+		S9 : // Jump completion
+		begin
+			PCWrite <= 1;
+			PCSource <= 2'b10;
+		end
+
+		S10 : // Addi Execution
+		begin
+			ALUSrcA <= 1;
+			ALUSrcB <= 2'b10;
+			ALUOp <= 2'b00;
+		end
+
+		S11 : // Addi completion
+		begin
+			RegDst <= 0;
+			RegWrite <= 1;
+			MemtoReg <= 0;
+		end
+
+		default :
+		begin
+			PCWriteCond <= PCWriteCond;
+			PCWrite <= PCWrite;
+			IorD <= IorD;
+			MemRead <= MemRead;
+			MemWrite <= MemWrite;
+			MemtoReg <= MemtoReg;
+			IRWrite <= IRWrite;
+			ALUSrcA <= ALUSrcA;
+			RegWrite <= RegWrite;
+			RegDst <= RegDst;
+			PCSource <= PCSource;
+			ALUOp <= ALUOp;
+			ALUSrcB <= ALUSrcB;
+		end
+	endcase
+end
+
+endmodule

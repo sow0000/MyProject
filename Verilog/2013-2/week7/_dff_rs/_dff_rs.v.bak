@@ -1,0 +1,12 @@
+module _dff_rs(clk,set_n,reset_n,d,q);
+	input clk,set_n,reset_n,d;
+	output q;
+	
+	wire set,w0_d, w1_d;
+	
+	_inv U0_inv(.a(set_n).y(set));
+	_or2 U1_or2(.a(d),.b(set),.y(w0_d));
+	_and2 U2_and2(.a(w0_d),.b(reset_n),.y(w1_d));
+	_dff U3_dff(.clk(clk),.d(w1_d),.q(q));
+	
+endmodule //End of module

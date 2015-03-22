@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_edu"
+    tools:context=".MainActivity" >
+
+    <ViewFlipper
+        android:id="@+id/edu_flipper_rule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp" >
+ 
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        	android:textColor="#000000"
+            android:text="@string/edu_rule_1" />
+ 
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        	android:textColor="#000000"
+            android:text="@string/edu_rule_2" />
+  
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        	android:textColor="#000000"
+            android:text="@string/edu_rule_3" />
+  
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        	android:textColor="#000000"
+            android:text="@string/edu_rule_4" />
+  
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        	android:textColor="#000000"
+            android:text="@string/edu_rule_5" />
+  
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        	android:textColor="#000000"
+            android:text="@string/edu_rule_6"/>
+ 
+    </ViewFlipper>
+ 
+</LinearLayout>

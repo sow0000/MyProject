@@ -1,0 +1,3 @@
+module FU(IDEX_Rs,IDEX_Rt,EXMEM_Rd,EXMEM_RegWrite,MEMWB_Rd,MEMWB_RegWrite,ForwardA,ForwardB);
+	input IDEX_Rs,IDEX_Rt,EXMEM_Rd,EXMEM_RegWrite,MEMWB_Rd,MEMWB_RegWrite
+	output ForwardA,ForwardB;

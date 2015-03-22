@@ -1,0 +1,15 @@
+`timescale 1ns/100ps
+
+module tb_ram;
+	reg CLOCK,CEn,WEn;
+	reg [7:0] ADDR;
+	reg [31:0] DIN;
+	wire [31:0] DOUT;
+	
+	parameter STEP=10;
+	
+	ram U0_ram(.clk(CLOCK),.cen(CEn),.wen(WEn),.addr(ADDR),.din(DIN),.dout(DOUT))
+	
+	always#(STEP/2) CLOCK=~CLOCK;
+	
+	

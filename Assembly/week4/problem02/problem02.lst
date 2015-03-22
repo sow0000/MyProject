@@ -1,0 +1,109 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Problem02, CODE, READONLY
+    2 00000000         
+    3 00000000         Main
+    4 00000000 E59F0030        LDR              r0,=C_string ;call the arry poi
+                                                            nter
+    5 00000004 E59F1028        LDR              r1,Address1 ;point start addres
+                                                            s
+    6 00000008 E3A03000        MOV              r3,#0       ;r3=0
+    7 0000000C         
+    8 0000000C         Strlen                               ;start of Strlen
+    9 0000000C E4D02001        LDRB             r2,[r0],#1  ;read character fro
+                                                            m string
+   10 00000010 E3520000        CMP              r2,#0       ;compare r2 and 0
+   11 00000014 0A000001        BEQ              Endline     ;if r2==0, go to En
+                                                            dline
+   12 00000018         
+   13 00000018 E2833001        ADD              r3,r3,#1    ;r3++
+   14 0000001C EAFFFFFA        B                Strlen      ;go to Strlen
+   15 00000020         Endline                              ;Endline
+   16 00000020 E5813000        STR              r3,[r1]     ;r1=r3
+   17 00000024 E3A0F000        MOV              pc,#0       ;
+   18 00000028         
+   19 00000028 48 65 6C 
+              6C 6F 20 
+              77 6F 72 
+              6C 64 00 C_string
+                               DCB              "Hello world",0 ;C_string="Hell
+                                                            o world"
+   20 00000034 00040000 
+                       Address1
+                               DCD              &00040000   ;Address1=0x0004000
+                                                            0
+   21 00000038         
+   22 00000038         END                                  ;End of file
+                       
+              00000000 
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem02.
+d -o.\problem02.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\problem02.lst problem02.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Address1 00000034
+
+Symbol: Address1
+   Definitions
+      At line 20 in file problem02.s
+   Uses
+      At line 5 in file problem02.s
+Comment: Address1 used once
+C_string 00000028
+
+Symbol: C_string
+   Definitions
+      At line 19 in file problem02.s
+   Uses
+      At line 4 in file problem02.s
+Comment: C_string used once
+END 00000038
+
+Symbol: END
+   Definitions
+      At line 22 in file problem02.s
+   Uses
+      None
+Comment: END unused
+Endline 00000020
+
+Symbol: Endline
+   Definitions
+      At line 15 in file problem02.s
+   Uses
+      At line 11 in file problem02.s
+Comment: Endline used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file problem02.s
+   Uses
+      None
+Comment: Main unused
+Problem02 00000000
+
+Symbol: Problem02
+   Definitions
+      At line 1 in file problem02.s
+   Uses
+      None
+Comment: Problem02 unused
+Strlen 0000000C
+
+Symbol: Strlen
+   Definitions
+      At line 8 in file problem02.s
+   Uses
+      At line 14 in file problem02.s
+Comment: Strlen used once
+7 symbols
+340 symbols in table

@@ -1,0 +1,14 @@
+module arbitrator(clk,reset_n,M0_req,M1_req,M0_grant,M1_grant);
+	input clk,reset_n,M0_req,M1_req;
+	output M0_grant,M1_grant;
+	
+	wire [2:0] next_state; //next state
+	wire [2:0] state; //current state
+	wire Prev_grant; //previous grant
+	
+	_dff_r U0_dff_r(.clk(clk),.reset_n(reset_n),.d(Prev_grant),.q(Prev_grant));
+	_register3_r U0__register3_r(.clk(clk),.reset_n(reset_n),.d(next_state),.q(state));
+	ns_logic U1_ns_logic(.M0_req(M0_req),.M1_req(M1_req),.state(state),.next_state(next_state),.Prev_grant(Prev_grant));
+	os_logic U2_os_logic(.state(state),.M0_grant(M0_grant),.M1_grant(M1_grant));
+	
+endmodule //End of module

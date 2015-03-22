@@ -1,0 +1,1 @@
+module Fact_os_logic(state,op_start,op_clear,op_done,S_grant,M_grant,m_interrupt,next_state);

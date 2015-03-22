@@ -1,0 +1,5 @@
+module tl_cntr(clk, reset_n, Ta, Tb, La, Lb);
+input 		 clk;
+input 		 reset_n;
+output 		 Ta, Tb;
+output [1:0] La, Lb;

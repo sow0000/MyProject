@@ -1,0 +1,11 @@
+module Multiplier_slave(clk,reset_n,S_sel,S_wr,S_address,S_din,S_dout);
+	input clk,reset_n,S_sel,S_wr;
+	input [7:0] S_address;
+	input [127:0] result;
+	output op_start,op_clear;
+	output [63:0] multilpicand;
+	output [63:0] multiplier;
+	output [31:0] S_dout;
+	output m_interrupt;
+	
+endmodule //End of module

@@ -1,0 +1,18 @@
+module ns_logic(load,inc,state,next_state);
+	parameter IDLE_STATE=3'b000;
+	parameter LOAD_STATE=3'b000;
+	parameter INC_STATE=3'b000;
+	parameter INC2_STATE=3'b000;
+	parameter DEC_STATE=3'b000;
+	parameter DEC2_STATE=3'b000;
+	
+	input load, inc;
+	input [2:0] state;
+	output [2:0] next_state;
+	
+	reg [2:0] next_state;
+	
+	always@(load,inc,state)
+	begin
+	case(state)
+	

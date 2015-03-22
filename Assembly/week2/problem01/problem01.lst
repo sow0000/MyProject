@@ -1,0 +1,78 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E59F001C        LDR              r0, TEMPADDR1 ;Save address "0x
+                                                            00001000" into r0
+    6 00000004 E3A01011        MOV              r1, #0x11   ;Input 0x11 into r1
+                                                            
+    7 00000008 E3A0200A        MOV              r2, #0x0A   ;Input 0x0A into r2
+                                                            
+    8 0000000C         
+    9 0000000C E5C01000        STRB             r1, [r0]    ;Input r1 into 0x00
+                                                            001000
+   10 00000010 E5D03000        LDRB             r3, [r0]    ;Load value of memo
+                                                            ry r0 and put it in
+                                                            to r3
+   11 00000014         
+   12 00000014 E0534002        SUBS             r4, r3, r2  ;Substract r2 from 
+                                                            r3 and input result
+                                                             into r4 setting fl
+                                                            ag of CPSR
+   13 00000018 C3A05001        MOVGT            r5, #1      ;If r3 is bigger th
+                                                            an r2, input 1 into
+                                                             r5
+   14 0000001C 03A05002        MOVEQ            r5, #2      ;If r3 is equal to 
+                                                            r2, input 2 into r5
+                                                            
+   15 00000020 B3A05003        MOVLT            r5, #3      ;If r3 is smaller t
+                                                            han r2, input 3 int
+                                                            o r5
+   16 00000024         
+   17 00000024 00001000 
+                       TEMPADDR1
+                               &                &00001000   ;TEMPADDR1=0x000010
+                                                            00
+   18 00000028         
+   19 00000028                 END                          ;Mark end of file
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem01.
+d -o.\problem01.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\problem01.lst problem01.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file problem01.s
+   Uses
+      None
+Comment: ARMex unused
+TEMPADDR1 00000024
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 17 in file problem01.s
+   Uses
+      At line 5 in file problem01.s
+Comment: TEMPADDR1 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem01.s
+   Uses
+      None
+Comment: start unused
+3 symbols
+334 symbols in table

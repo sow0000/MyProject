@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Binary Search Tree 0925", "Binary Search Tree 0925.vcproj", "{89DE8B5C-47EF-4859-8404-2B786566F297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89DE8B5C-47EF-4859-8404-2B786566F297}.Debug|Win32.ActiveCfg = Debug|Win32
+		{89DE8B5C-47EF-4859-8404-2B786566F297}.Debug|Win32.Build.0 = Debug|Win32
+		{89DE8B5C-47EF-4859-8404-2B786566F297}.Release|Win32.ActiveCfg = Release|Win32
+		{89DE8B5C-47EF-4859-8404-2B786566F297}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

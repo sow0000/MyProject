@@ -1,0 +1,15 @@
+`timescale 1ns/100ps
+
+module tb_tl_cntr();
+	reg 		  clk;
+	reg 		  tb_reset_n;
+	reg 		  tb_Ta, tb_Tb;
+	wire [1:0] tb_La, tb_Lb;
+	
+	parameter STEP = 10;
+	
+// Instance of Traffic Light Controller
+	tl_cntr tb_tl_cntr(clk, tb_reset_n, tb_Ta, tb_Tb, tb_La, tb_Lb)
+	
+	always # (STEP/2) clk = ~clk;			// clock
+	

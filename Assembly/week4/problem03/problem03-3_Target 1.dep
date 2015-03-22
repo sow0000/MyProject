@@ -1,0 +1,2 @@
+Dependencies for Project 'problem03-3', Target 'Target 1': (DO NOT MODIFY !)
+F (.\problem03-3.s)(0x525E8BCF)(--cpu ARM9E --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\problem03-3.lst --xref -o .\problem03-3.o --depend .\problem03-3.d)

@@ -1,0 +1,8 @@
+module Factorial_slave(clk,reset_n,S_sel,S_wr,S_address,S_din,S_dout,f_interrupt,N_value,op_start,op_clear,result,state);
+	input clk,reset_n,S_sel,S_wr;
+	input [7:0] S_address;
+	input [31:0] S_din;
+	input [63:0] result;
+	input [4:0] state;
+	output f_intterupt,op_start,op_clear;
+	output [31:0] S_dout,N_value;

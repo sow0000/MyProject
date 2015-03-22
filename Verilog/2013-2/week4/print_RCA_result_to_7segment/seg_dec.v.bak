@@ -1,0 +1,21 @@
+module seg_dec(iHex, oSEG7);
+	input [3:0] iHex;
+	output reg [6:0] oSEG7;
+	
+	always @ (iHex)
+	begin
+	case (iHex) //start case statement with condition iHex
+      4'b0000 : oSEG7=7'b0000001; //if iHex is 0000, input 0000001 into oSEG7
+      4'b0001 : oSEG7=7'b1001111; //if iHex is 0001, input 1001111 into oSEG7
+      4'b0010 : oSEG7=7'b0010010; //if iHex is 0010, input 0010010 into oSEG7
+      4'b0011 : oSEG7=7'b0000110; //if iHex is 0011, input 0000110 into oSEG7
+      4'b0100 : oSEG7=7'b1001100; //if iHex is 0100, input 1001100 into oSEG7
+      4'b0101 : oSEG7=7'b0100100; //if iHex is 0101, input 0100100 into oSEG7
+      4'b0110 : oSEG7=7'b0100000; //if iHex is 0110, input 0100000 into oSEG7
+      4'b0111 : oSEG7=7'b0001111; //if iHex is 0111, input 0001111 into oSEG7
+      4'b1000 : oSEG7=7'b0000000; //if iHex is 1000, input 0000000 into oSEG7
+      4'b1001 : oSEG7=7'b0001100; //if iHex is 1001, input 0001100 into oSEG7
+      default : oSEG7=7'b1111111; //the other cases, input 1111111 into oSEG7
+    endcase //end case statement
+	end
+endmodule

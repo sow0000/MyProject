@@ -1,0 +1,1 @@
+.\problem.o: problem.s

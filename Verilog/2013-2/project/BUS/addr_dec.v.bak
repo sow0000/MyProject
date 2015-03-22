@@ -1,0 +1,5 @@
+module address_decoder(S_address,S0_sel,S1_sel,S2_sel);
+	input [7:0] S_address;
+	output S0_sel,S1_sel,S2_sel;
+	
+endmodule //End of module;

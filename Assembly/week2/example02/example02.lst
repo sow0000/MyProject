@@ -1,0 +1,72 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E59F0014        LDR              r0, TEMPADDR1
+    6 00000004 E59F1014        LDR              r1, TEMPADDR2
+    7 00000008 E3A0209C        MOV              r2, #156
+    8 0000000C E3A030C9        MOV              r3, #201
+    9 00000010         
+   10 00000010 E5802000        STR              r2, [r0]
+   11 00000014 E5813000        STR              r3, [r1]
+   12 00000018         
+   13 00000018 E5B01004        LDR              r1, [r0, #4]!
+   14 0000001C         
+   15 0000001C 00001000 
+                       TEMPADDR1
+                               &                &00001000
+   16 00000020 00001004 
+                       TEMPADDR2
+                               &                &00001004
+   17 00000024         
+   18 00000024 E1A0F00E        MOV              pc, lr
+   19 00000028                 END
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\example02.
+d -o.\example02.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\example02.lst example02.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file example02.s
+   Uses
+      None
+Comment: ARMex unused
+TEMPADDR1 0000001C
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 15 in file example02.s
+   Uses
+      At line 5 in file example02.s
+Comment: TEMPADDR1 used once
+TEMPADDR2 00000020
+
+Symbol: TEMPADDR2
+   Definitions
+      At line 16 in file example02.s
+   Uses
+      At line 6 in file example02.s
+Comment: TEMPADDR2 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file example02.s
+   Uses
+      None
+Comment: start unused
+4 symbols
+335 symbols in table

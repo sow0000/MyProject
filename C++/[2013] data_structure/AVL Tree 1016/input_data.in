@@ -1,0 +1,16 @@
+INSERT JungHwan Lee 013-4523 52 wolgye-dong
+INSERT WonYoung Kim 301-5825 1190 myunmok-dong
+INSERT SungHyun Choi 304-5728 714 ssangmun-dong
+INSERT YongHoon Cha 304-2328 1003 shihung-dong
+PRINTNAME SungHyun Choi 304-5728
+INSERT YongHoon Cha 405-7542 255 wolgye-dong
+INSERT WooShin Lee 216-5728 134 bupyeong-dong
+INSERT AYung Lee 231-4325 213 wolgye-dong
+PRINTPHONE 301-5825
+UPDATENAME YongHoon Cha 304-2328 308-2328 18 shindang-dong 
+UPDATENAME WonYoung Kim 301-7854 315 yongdu-dong 
+UPDATEPHONE 231-4325 17 samsun-dong 
+DELETENAME YongHoon Cha 405-7542
+DELETEPHONE 304-5728
+PRINTLASTNAME Lee
+PRINTALL

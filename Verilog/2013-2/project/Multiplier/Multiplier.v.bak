@@ -1,0 +1,1 @@
+module Multiplier(clk,reset_n,S_sel,S_wr,S_address,S_din,S_dout,m_interrupt)

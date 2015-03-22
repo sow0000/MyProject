@@ -1,0 +1,127 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ARMex, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000         start
+    5 00000000 E59F0058        LDR              r0, TEMPADDR1 ;Save address "0x
+                                                            40000000" into r4
+    6 00000004 E3A01001        MOV              r1, #1      ;Input 1 into r1
+    7 00000008 E4801004        STR              r1, [r0], #4 ;Input 1! into 0x4
+                                                            0000000 and move to
+                                                             0x40000004
+    8 0000000C         
+    9 0000000C E1A01081        MOV              r1, r1, LSL #1 ;1x2
+   10 00000010 E4801004        STR              r1, [r0], #4 ;Input 2! into 0x4
+                                                            0000004 and move to
+                                                             0x40000008
+   11 00000014         
+   12 00000014 E0811081        ADD              r1, r1, r1, LSL #1 
+                                                            ;1x2+1x2x2=1x2x3
+   13 00000018 E4801004        STR              r1, [r0], #4 ;Input 3! into 0x4
+                                                            0000008 and move to
+                                                             0x4000000C
+   14 0000001C         
+   15 0000001C E1A01101        MOV              r1, r1, LSL #2 ;1x2x3x4
+   16 00000020 E4801004        STR              r1, [r0], #4 ;Input 4! into 0x4
+                                                            000000C and move to
+                                                             0x40000010
+   17 00000024         
+   18 00000024 E0811101        ADD              r1, r1, r1, LSL #2 ;1x2x3x4+1x2
+                                                            x3x4x4=1x2x3x4x5
+   19 00000028 E4801004        STR              r1, [r0], #4 ;Input 5! into 0x4
+                                                            0000010 and move to
+                                                             0x40000014
+   20 0000002C         
+   21 0000002C E1A02081        MOV              r2, r1, LSL #1 ;1x2x3x4x5x2
+   22 00000030 E0821101        ADD              r1, r2, r1, LSL #2 ;1x2x3x4x5x2
+                                                            +1x2x3x4x5x4=1x2x3x
+                                                            4x5x6
+   23 00000034 E4801004        STR              r1, [r0], #4 ;Input 6! into 0x4
+                                                            0000014 and move to
+                                                             0x40000018
+   24 00000038         
+   25 00000038 E0812081        ADD              r2, r1, r1, LSL #1 ;1x2x3x4x5x6
+                                                            +1x2x3x4x5x6x2=1x2x
+                                                            3x4x5x6x3
+   26 0000003C E0821101        ADD              r1, r2, r1, LSL #2 ;1x2x3x4x5x6
+                                                            x3+1x2x3x4x5x6x4=1x
+                                                            2x3x4x5x6x7
+   27 00000040 E4801004        STR              r1, [r0], #4 ;Input 7! into 0x4
+                                                            0000018 and move to
+                                                             0x4000001C
+   28 00000044         
+   29 00000044 E1A01181        MOV              r1, r1, LSL #3 ;1x2x3x4x5x6x7x8
+                                                            
+   30 00000048 E4801004        STR              r1, [r0], #4 ;Input 8! into 0x4
+                                                            000001C and move to
+                                                             0x40000020
+   31 0000004C         
+   32 0000004C E0811181        ADD              r1, r1, r1, LSL #3 ;1x2x3x4x5x6
+                                                            x7x8x8+1x2x3x4x5x6x
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            7x8=1x2x3x4x5x6x7x8
+                                                            x9
+   33 00000050 E4801004        STR              r1, [r0], #4 ;Input 9! into 0x4
+                                                            0000020 and move to
+                                                             0x40000024
+   34 00000054         
+   35 00000054 E1A02081        MOV              r2, r1, LSL #1 ;1x2x3x4x5x6x7x8
+                                                            x9x2
+   36 00000058 E0821181        ADD              r1, r2, r1, LSL #3 ;1x2x3x4x5x6
+                                                            x7x8x9x2+1x2x3x4x5x
+                                                            6x7x8x9x8=1x2x3x4x5
+                                                            x6x7x8x9x10
+   37 0000005C E5801000        STR              r1, [r0]    ;Input 10! into 0x4
+                                                            0000024
+   38 00000060         
+   39 00000060 40000000 
+                       TEMPADDR1
+                               &                &40000000   ;TEMPADDR1=0x400000
+                                                            00
+   40 00000064         
+   41 00000064                 END                          ;End of file
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem01.
+d -o.\problem01.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\problem01.lst problem01.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARMex 00000000
+
+Symbol: ARMex
+   Definitions
+      At line 1 in file problem01.s
+   Uses
+      None
+Comment: ARMex unused
+TEMPADDR1 00000060
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 39 in file problem01.s
+   Uses
+      At line 5 in file problem01.s
+Comment: TEMPADDR1 used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file problem01.s
+   Uses
+      None
+Comment: start unused
+3 symbols
+334 symbols in table

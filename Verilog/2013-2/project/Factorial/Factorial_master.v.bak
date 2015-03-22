@@ -1,0 +1,9 @@
+module Factorial_master(m_interrupt,M_grant,M_din,M_req,M_wr,M_address,M_dout,N_value,op_start,op_clear,result,state);
+	input m_interrupt,M_grant,op_start,op_clear;
+	input [31:0] M_din,N_value;
+	output M_req,_wr;
+	output [7:0] M_address;
+	output [31:0] M_dout;
+	output [63:0] result;
+	output [4:0] state;
+	

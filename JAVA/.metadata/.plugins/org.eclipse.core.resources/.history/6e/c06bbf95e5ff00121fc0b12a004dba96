@@ -1,0 +1,19 @@
+
+public class ex7 {
+
+	public static void main(String[] args) {
+		int size=3;
+		String queue="QUEUE";
+		myQueue mQueue=new myQueue();
+		
+		mQueue.setSize(size);
+		System.out.println("Stack Size : "+mQueue.m_size);
+		
+		for(int Loop=0;Loop<queue.length();Loop++){
+			Node newNode=new Node();
+			newNode.setData((int)queue.charAt(Loop));
+			mQueue.Push(newNode);
+		}
+		mQueue.printQueue();
+	}
+}

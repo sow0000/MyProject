@@ -1,0 +1,152 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Problem, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         start
+    4 00000000 E59F009C        LDR              r0, Value1  ;Value1
+    5 00000004 E59F309C        LDR              r3, Value2  ;Value2
+    6 00000008         
+    7 00000008 E1B00080        LSLS             r0, #1      ;delete sign
+    8 0000000C 23A01001        MOVCS            r1, #1      ;sign bit
+    9 00000010 E1A02400        MOV              r2, r0, LSL #8
+   10 00000014 E1A024A2        LSR              r2, #9      ;mantissa bit
+   11 00000018 E1A00C20        LSR              r0, #24     ;exponent bit
+   12 0000001C         
+   13 0000001C E1B03083        LSLS             r3, #1      ;delete sign
+   14 00000020 23A04001        MOVCS            r4, #1      ;sign bit
+   15 00000024 E1A05403        MOV              r5, r3, LSL #8
+   16 00000028 E1A054A5        LSR              r5, #9      ;mantissa bit
+   17 0000002C E1A03C23        LSR              r3, #24     ;exponent bit
+   18 00000030         
+   19 00000030 E3A06001        MOV              r6, #1
+   20 00000034 E0822B86        ADD              r2, r2, r6, LSL #23 ;add 1 to f
+                                                            ront of mantissa
+   21 00000038 E0855B86        ADD              r5, r5, r6, LSL #23
+   22 0000003C         
+   23 0000003C E0507003        SUBS             r7, r0, r3  ;shiftNum
+   24 00000040 50833007        ADDPL            r3, r3, r7  ;equalize exponent
+   25 00000044 51A05735        LSRPL            r5, r7      ;shift mantissa
+   26 00000048 42677000        RSBMI            r7, r7, #0  ;absolute value of 
+                                                            shiftNum
+   27 0000004C 41A02732        LSRMI            r2, r7      ;shift mantissa
+   28 00000050         
+   29 00000050 E1510004        CMP              r1, r4      ;compare sign bit
+   30 00000054 00828005        ADDEQ            r8, r2, r5  ;same sign, add man
+                                                            tissa
+   31 00000058 10528005        SUBNES           r8, r2, r5  ;different sign, su
+                                                            b mantissa
+   32 0000005C 51A09001        MOVPL            r9, r1      ;new sign
+   33 00000060 42688000        RSBMI            r8, r8, #0  ;absolute value of 
+                                                            mantissa
+   34 00000064 41A09004        MOVMI            r9, r4      ;new sign
+   35 00000068         
+   36 00000068         normalize                            ;normalize
+   37 00000068 E1A0ABA8        MOV              r10, r8, LSR #23 ;compare first
+                                                             digit
+   38 0000006C E15A0006        CMP              r10, r6
+   39 00000070 0A000004        BEQ              Endline     ;normalize finish
+   40 00000074 51A080A8        LSRPL            r8, #1      ;shift right
+   41 00000078 52833001        ADDPL            r3, r3, #1  ;add exponent
+   42 0000007C 41A08088        LSLMI            r8, #1      ;shift left
+   43 00000080 42433001        SUBMI            r3, r3, #1  ;sub exponent
+   44 00000084 EAFFFFF7        B                normalize   ;loop normalize
+   45 00000088         
+   46 00000088         Endline                              ;Endline
+   47 00000088 E0488B86        SUB              r8, r8, r6, LSL #23 ;sub from f
+                                                            ront of mantissa
+   48 0000008C E0888B83        ADD              r8, r8, r3, LSL #23 
+                                                            ;add exponent
+   49 00000090 E0888F89        ADD              r8, r8, r9, LSL #31 ;add sign
+   50 00000094         
+   51 00000094 E59FB004        LDR              r11, TEMPADDR1 ;r12->0x40000000
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            
+   52 00000098 E58B8000        STR              r8, [r11]   ;store result
+   53 0000009C         
+   54 0000009C E3A0F000        MOV              pc, #0
+   55 000000A0         
+   56 000000A0 40000000 
+                       TEMPADDR1
+                               &                &40000000
+   57 000000A4 40F80000 
+                       Value1  DCI              0x40F80000  ;7.75
+   58 000000A8 41040000 
+                       Value2  DCI              0x41040000  ;8.25
+   59 000000AC         
+   60 000000AC                 END
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem.d 
+-o.\problem.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="_
+_EVAL SETA 1" --list=.\problem.lst problem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Endline 00000088
+
+Symbol: Endline
+   Definitions
+      At line 46 in file problem.s
+   Uses
+      At line 39 in file problem.s
+Comment: Endline used once
+Problem 00000000
+
+Symbol: Problem
+   Definitions
+      At line 1 in file problem.s
+   Uses
+      None
+Comment: Problem unused
+TEMPADDR1 000000A0
+
+Symbol: TEMPADDR1
+   Definitions
+      At line 56 in file problem.s
+   Uses
+      At line 51 in file problem.s
+Comment: TEMPADDR1 used once
+Value1 000000A4
+
+Symbol: Value1
+   Definitions
+      At line 57 in file problem.s
+   Uses
+      At line 4 in file problem.s
+Comment: Value1 used once
+Value2 000000A8
+
+Symbol: Value2
+   Definitions
+      At line 58 in file problem.s
+   Uses
+      At line 5 in file problem.s
+Comment: Value2 used once
+normalize 00000068
+
+Symbol: normalize
+   Definitions
+      At line 36 in file problem.s
+   Uses
+      At line 44 in file problem.s
+Comment: normalize used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 3 in file problem.s
+   Uses
+      None
+Comment: start unused
+7 symbols
+338 symbols in table

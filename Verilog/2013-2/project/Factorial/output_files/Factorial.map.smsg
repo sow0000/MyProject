@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Factorial_slave.v(19): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Fact_os_logic.v(32): always construct contains both blocking and non-blocking assignments

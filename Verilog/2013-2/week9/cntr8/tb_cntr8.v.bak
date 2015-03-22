@@ -1,0 +1,7 @@
+`timescale 1ns/100ps;
+
+module tb_cntr8;
+	reg clk,reset_n,inc,load;
+	reg [7:0] d_in;
+	wire [7:0] d_out;
+	wire [2:0] o_state;

@@ -1,0 +1,175 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//TITLE : Factorial Next state logic
+//FILE : fact_ns_logic.v
+//ORGANIZATION : Kwangwoon Univ. Computer Engineering
+//STUDENT ID : 2010720092
+//STUDENT NAME : Hyunjae Lee(kc803@naver.com)
+//PLATFORM : Windows 7 64-Bit
+//SIMULATOR : ModelSim-Altera 10.1d
+//COMPILER : Altera Quartus II 13.0 64-Bit
+//TARGET BOARD : Altera DE2-70
+//DESCRIPTION : This module defines Factorial Next state logic
+//LAST UPDATE : DEC, 01, 2013
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+module fact_ns_logic(state,op_start,op_clear,op_done,S_grant,M_grant,m_interrupt,next_state); //module of Factorial Next state logic
+	input op_start,op_clear,op_done,S_grant,M_grant,m_interrupt; //operation start, operation clear, operation doen, multiplier state, mater grant, multiplier interrupt
+	input [4:0] state; //current state
+	output reg [4:0] next_state; //next stae
+	
+	parameter IDLE=5'b00000; //idle
+	parameter DONE=5'b00001; //operation done
+	parameter START=5'b00010; //operation start
+	parameter NEXT_N=5'b00011; //calculate next N
+	parameter CHK_N=5'b00100; //check N
+	parameter GRANT=5'b00101; //require grant
+	parameter CHK_S=5'b00110; //check multiplier state
+	parameter BUSY=5'b00111; //multiplier is not idle
+	parameter SEND_N1=5'b01000; //input N[31:0]
+	parameter SEND_N2=5'b01001; //input N[63:32]
+	parameter SEND_N3=5'b01010; //input N-1[31:0]
+	parameter SEND_N4=5'b01011; //input N-1[63:32]
+	parameter SEND_IE=5'b01100; //input interrupt enable
+	parameter SEND_OP=5'b01101; //input operation start
+	parameter WAIT=5'b01110; //multiplier operating
+	parameter READ_R1=5'b01111; //read result[31:0]
+	parameter READ_R2=5'b10000; //read result[63:32]
+	parameter SEND_CR=5'b10001; //input operation clear
+	
+	always@(state,op_start,op_clear,op_done,S_grant,M_grant,m_interrupt)
+	begin
+	case(state)
+		IDLE :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'b1,1'b0,1'bx,1'bx,1'bx,1'bx} : next_state=5'b00010; //op start
+			default : next_state=5'b00000;
+		endcase
+		end
+		DONE :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b1,1'bx,1'bx,1'bx,1'bx} : next_state=5'b00000; //op clear
+			default : next_state=5'b00001;
+		endcase
+		end
+		START :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'b1,1'b0,1'bx,1'bx,1'bx,1'bx} : next_state=5'b00011; //input N
+			default : next_state=5'b00000;
+		endcase
+		end
+		NEXT_N :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'bx,1'bx} : next_state=5'b00100; //N=N-1
+			default : next_state=5'b00000;
+		endcase
+		end
+		CHK_N :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'bx,1'bx} : next_state=5'b00101; //require grant
+			{1'bx,1'b0,1'b1,1'bx,1'bx,1'bx} : next_state=5'b00001; //N=0
+			default : next_state=5'b00000;
+		endcase
+		end
+		GRANT :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'b0,1'bx} : next_state=5'b00101; //require grant
+			{1'bx,1'b0,1'b0,1'bx,1'b1,1'b0} : next_state=5'b00110; //grant=1
+			{1'bx,1'b0,1'b0,1'bx,1'b1,1'b1} : next_state=5'b01111; //multiplier done and grant=1
+			default : next_state=5'b00000;
+		endcase
+		end
+		CHK_S :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b0,1'b1,1'bx} : next_state=5'b00111; //multiplier is not idle
+			{1'bx,1'b0,1'b0,1'b1,1'b1,1'bx} : next_state=5'b01000; //multiplier is idle
+			default : next_state=5'b00000;
+		endcase
+		end
+		BUSY :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b0,1'bx,1'bx} : next_state=5'b00101; //wait multiplier and require grant
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_N1 :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b1,1'b1,1'bx} : next_state=5'b01001; //input N[63:32]
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_N2 :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b1,1'b1,1'bx} : next_state=5'b01010; //input N-1[31:0]
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_N3 :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b1,1'b1,1'bx} : next_state=5'b01011; //input N-1[63:32]
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_N4 :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b1,1'b1,1'bx} : next_state=5'b01100; //input interrupt enable
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_IE :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'b1,1'b1,1'bx} : next_state=5'b01101; //input operation start
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_OP :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'b1,1'bx} : next_state=5'b01110; //wait multiplier operating
+			default : next_state=5'b00000;
+		endcase
+		end
+		WAIT :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'bx,1'b0} : next_state=5'b01110; //multiplier operating
+			{1'bx,1'b0,1'b0,1'bx,1'bx,1'b1} : next_state=5'b00101; //multiplier done
+			default : next_state=5'b00000;
+		endcase
+		end
+		READ_R1 :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'b1,1'b1} : next_state=5'b10000; //read result[63:32]
+			default : next_state=5'b00000;
+		endcase
+		end
+		READ_R2 :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'b1,1'b1} : next_state=5'b10001; //input operation clear
+			default : next_state=5'b00000;
+		endcase
+		end
+		SEND_CR :
+		begin
+		casex({op_start,op_clear,op_done,S_grant,M_grant,m_interrupt})
+			{1'bx,1'b0,1'b0,1'bx,1'b1,1'bx} : next_state=5'b00011; //N=N-1
+			default : next_state=5'b00000;
+		endcase
+		end
+	endcase
+	end
+endmodule //End of module

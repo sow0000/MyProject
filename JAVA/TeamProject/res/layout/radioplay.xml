@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_radio"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/EditTextURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://www.mobvcasting.com/android/audio/test.m3u" >
+  
+    </EditText>
+
+    <Button
+        android:id="@+id/ButtonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Stop" />
+
+</LinearLayout>

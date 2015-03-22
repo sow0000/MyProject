@@ -1,0 +1,9 @@
+module halfAdder(a, b, cout, s);
+	input a, b;
+	output cout, s;
+	
+	wire a, b
+	
+	_and2 U0_and2(.a(a),.b(b),.y(cout));
+	_xor2 U1_xor2(.a(a),.b(b),.y(s));
+endmodule

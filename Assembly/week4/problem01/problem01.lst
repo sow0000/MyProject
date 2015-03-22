@@ -1,0 +1,93 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Problem01, CODE, READONLY
+    2 00000000         
+    3 00000000         Main
+    4 00000000 E3A00000        MOV              r0,#0x00    ;r0=0x00
+    5 00000004 E3A0100F        MOV              r1,#0x0F    ;r0=0x0F
+    6 00000008 E3A02003        MOV              r2,#0x03    ;r0=0x03
+    7 0000000C E3A03006        MOV              r3,#0x06    ;r0=0x06
+    8 00000010 E59F7010        LDR              r7,Address1 ;point start addres
+                                                            s
+    9 00000014         
+   10 00000014         Example_1                            ;start of Example_1
+                                                            
+   11 00000014 E0824083        ADD              r4,r2,r3,LSL #1 ;r4=r2+(r3*2)
+   12 00000018 E0405001        SUB              r5,r0,r1    ;r5=r0-r1
+   13 0000001C E0846005        ADD              r6,r4,r5    ;r6=r4+r5
+   14 00000020         
+   15 00000020 E5876000        STR              r6,[r7]     ;r7=r6
+   16 00000024         
+   17 00000024         Endline                              ;Endline
+   18 00000024 E3A0F000        MOV              pc,#0       ;
+   19 00000028         
+   20 00000028 00040000 
+                       Address1
+                               DCD              &40000      ;Address1=0x0004000
+                                                            0
+   21 0000002C         
+   22 0000002C         END                                  ;End of file
+                       
+Command Line: --debug --xref --cpu=ARM9E --apcs=interwork --depend=.\problem01.
+d -o.\problem01.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefin
+e="__EVAL SETA 1" --list=.\problem01.lst problem01.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Address1 00000028
+
+Symbol: Address1
+   Definitions
+      At line 20 in file problem01.s
+   Uses
+      At line 8 in file problem01.s
+Comment: Address1 used once
+END 0000002C
+
+Symbol: END
+   Definitions
+      At line 22 in file problem01.s
+   Uses
+      None
+Comment: END unused
+Endline 00000024
+
+Symbol: Endline
+   Definitions
+      At line 17 in file problem01.s
+   Uses
+      None
+Comment: Endline unused
+Example_1 00000014
+
+Symbol: Example_1
+   Definitions
+      At line 10 in file problem01.s
+   Uses
+      None
+Comment: Example_1 unused
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file problem01.s
+   Uses
+      None
+Comment: Main unused
+Problem01 00000000
+
+Symbol: Problem01
+   Definitions
+      At line 1 in file problem01.s
+   Uses
+      None
+Comment: Problem01 unused
+6 symbols
+337 symbols in table

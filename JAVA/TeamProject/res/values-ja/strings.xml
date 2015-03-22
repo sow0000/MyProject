@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TeamProject</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">緊急狀況 SOS</string>
+    <string name="edu_mode">学習する</string>
+    <string name="earthquake">地震</string>
+    <string name="flood">洪水</string>
+    <string name="typhoon">台風</string>
+    <string name="fire">火災</string>
+    <string name="tsunami">津波</string>
+    <string name="rule">危急状況時の行動原則</string>
+    <string name="cr">心肺蘇生法</string>
+    <string name="emer_1">避難所</string>
+    <string name="emer_2">サイレン</string>
+    <string name="emer_3">懐中電灯</string>
+    <string name="emer_4">メール</string>
+    <string name="emer_5">緊急ラジオ</string>
+    <string name="emer_6">緊急SNS</string>
+    <string name="emer_8">緊急放送</string>
+    <string name="emer_9">番号指定</string>
+    <string name="emer_call">緊急電話</string>
+    <string name="emer_call_custom">指定番号</string>
+    <string name="edu_text">行動規範</string>
+    <string name="edu_movie">教育ビデオ</string>
+    <string name="edu_aid">応急処置</string>
+    <string name="edu_equ">構造装置の使用法</string>
+    <string name="edu_quiz">災害常識クイズ</string>
+	<string name="query">避難所</string>
+	<string name="aed">除細動器</string>
+	<string name="lift">緩降機</string>
+	<string name="ar">空気呼吸器</string>
+	<string name="gm">ガスマスク</string>
+	<string name="fe">消火器</string>
+	<string name="hs">止血</string>
+	<string name="shock">ショック</string>
+	<string name="frac">骨折</string>
+	<string name="burn">火傷</string>
+	
+	<string name="ok">OK</string>
+	<string name="cancel">キャンセル</string>
+	
+	<string name="spnum_1">指定番号を入力してください</string>
+	<string name="spnum_2">指定番号</string>
+    
+    
+    <string name="sns_1">助けてください。</string>
+	<string name="sns_2">SNS情報を共有する</string>
+    
+    <string name="sms_1">今は緊急事態です。助けてください。私は今</string>
+    <string name="sms_2">にあります。</string>
+    <string name="sms_3">こちらは</string>
+    <string name="sms_4">の近くです。</string>
+    
+    <string name="addr_1">緯度：</string>
+    <string name="addr_2">経度：</string>
+    <string name="addr_3">高度：</string>
+    <string name="addr_4">未知の場所</string>
+    
+    <string name="edu_rule_1">1）危険\n\n 
+		いくつかの潜在的なリスクでもしになることがありますので、まず確認しなければならない。\n\n 
+		- 周辺に危険な要素はないのか、構造が危険にさらされないようにする。\n 
+		- 通り過ぎる人も危険にさらされないようにする。\n 
+		- リスクの削除が安全に行われることがある場合はすぐに削除する。\n 
+		- 火災現場などの危険な状況がなければ、患者を移動しない。</string>
+    <string name="edu_rule_2">2）反応\n\n 
+		反応の程度を確認しなければならない。\n\n
+		- 患者が意識不明か混迷した場合には、患者に大きな声で打って反応を確認する。（例：「私の言葉に聞こえるか？"）\n 
+		- もしサイズ呼んでも反応がない場合は、両肩を叩く。\n 
+		- 乳児（1歳未満）の靴底を打つことを確認する。</string>
+    <string name="edu_rule_3">3）助けを求める\n\n
+		もし反応がなければ通り過ぎる人や仲間と音打っ申告のための支援を要請しなければならない。\n
+		可能であれば知っている人を指名することで、目を合わせて理解していることを確認しなければならない。\n\n
+		4）祈り\n\n 
+		祈り（口から肺までの呼吸のための道）が、適切な呼吸のために問題がないことを確認しなければならない。\n
+		- 口を開いて祈りを妨げている物質がある場合は削除するべきなのに、前によく見える場合が器具を使って除去する。</string>
+	<string name="edu_rule_4">5）呼吸\n\n
+		患者が呼吸をしていることを確認し、呼吸がない場合は補助する。\n\n
+		- 胸が上り下りしていることを確認する。\n
+		- 耳を患者の口の近く当てて呼吸音を聞いてみる。\n
+		- 頬や耳を患者の顔に当てて呼吸が感じられるかどうかを確認する。\n
+		- 他の生命の証拠を確認する。（例：体の自発的な動き、唾液を嚥下、咳ます）\n
+		- 2回の人工呼吸を実施する。</string>
+	<string name="edu_rule_5">6）循環の証拠\n\n
+		循環があることを確認する。\n\n
+		- 呼吸、咳、あるいはどのような動きがあることを確認する。\n
+		- 特に熟練した医療従事者や救急医療従事者でなければ、あえて脈拍を触れて確認しようと努力する必要はない。\n
+		- 循環の証拠がなければ、胸骨圧迫を開始する。胸部圧迫などをするには、基礎的な手技の教育を受けなければならない。\n 
+		7）電話で助けを求めるときに\n
+		- 緊急サービス：119</string>
+	<string name="edu_rule_6">8）電話で助けを求めるときに何を言うべきか？\n\n
+		- 発信者の名前を言って、緊急時に助けを与えようとする人だと言う。\n
+		- 発信者の電話番号\n
+		- 状況の発生場所：住所や通りの名前、目立つ代表的な有名な場所を基準に説明。\n
+		- 状況の種類：例）「交通事故ですが、両方の車が衝突し、道路は詰まっていたし、三人が車の中にある"\n 
+		- 犠牲者の数、性別、およその年齢や他の被害者の状況について可能な情報\n 
+		- 危険物質についての詳細情報：ガスの有無、現場の気候情報（霧、氷など</string>
+	<string name="network">ネットワーク接続の状態を確認してください。</string>
+</resources>

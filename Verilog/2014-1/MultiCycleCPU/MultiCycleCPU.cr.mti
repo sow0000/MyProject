@@ -1,0 +1,53 @@
+D:/Programming/Verilog/2014-1/MultiCycleCPU/RF.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/RF.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RF
+-- Compiling module dec532
+
+Top level modules:
+	RF
+
+} {} {}} D:/Programming/Verilog/2014-1/MultiCycleCPU/SEU.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/SEU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SEU
+
+Top level modules:
+	SEU
+
+} {} {}} D:/Programming/Verilog/2014-1/MultiCycleCPU/ADD.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/ADD.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ADD
+-- Compiling module cla32
+-- Compiling module cla4
+
+Top level modules:
+	ADD
+
+} {} {}} D:/Programming/Verilog/2014-1/MultiCycleCPU/ALU.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/ALU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/Programming/Verilog/2014-1/MultiCycleCPU/ALUControl.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/ALUControl.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALUControl
+
+Top level modules:
+	ALUControl
+
+} {} {}} D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_MC_TOP.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_MC_TOP.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_MC_TOP
+
+Top level modules:
+	tb_MC_TOP
+
+} {} {}} D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_FSM.v {1 {vlog -work work D:/Programming/Verilog/2014-1/MultiCycleCPU/tb_FSM.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_FSM
+
+Top level modules:
+	tb_FSM
+
+} {} {}}

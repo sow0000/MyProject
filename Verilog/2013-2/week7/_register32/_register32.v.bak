@@ -1,0 +1,6 @@
+module _register32(clk,d,q);
+	input clk;
+	input [31:0] d;
+	output [31:0] q;
+	
+	_register8 U0_register8(.clk(clk),.d(d[3:0]),.q(q[3:0]));

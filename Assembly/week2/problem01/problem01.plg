@@ -1,0 +1,14 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Programming\Assembly\week2\problem01\problem01.uvproj
+Project File Date:  09/29/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling problem01.s...
+linking...
+Program Size: Code=40 RO-data=0 RW-data=0 ZI-data=0  
+".\problem01.axf" - 0 Errors, 0 Warning(s).

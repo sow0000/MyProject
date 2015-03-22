@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'Factorial_master:U0_Factorial_master|_register4_r:U0_state|_dff_r:U0_dff_r|q'
+Slack : -6.358
+TNS   : -278.278
+
+Type  : Slow Model Setup 'clk'
+Slack : -4.113
+TNS   : -325.375
+
+Type  : Slow Model Hold 'Factorial_master:U0_Factorial_master|_register4_r:U0_state|_dff_r:U0_dff_r|q'
+Slack : -9.797
+TNS   : -331.229
+
+Type  : Slow Model Hold 'clk'
+Slack : -3.281
+TNS   : -33.063
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -104.380
+
+Type  : Slow Model Minimum Pulse Width 'Factorial_master:U0_Factorial_master|_register4_r:U0_state|_dff_r:U0_dff_r|q'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Factorial_master:U0_Factorial_master|_register4_r:U0_state|_dff_r:U0_dff_r|q'
+Slack : -2.207
+TNS   : -84.851
+
+Type  : Fast Model Setup 'clk'
+Slack : -1.262
+TNS   : -86.427
+
+Type  : Fast Model Hold 'Factorial_master:U0_Factorial_master|_register4_r:U0_state|_dff_r:U0_dff_r|q'
+Slack : -4.787
+TNS   : -170.626
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.849
+TNS   : -57.738
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -104.380
+
+Type  : Fast Model Minimum Pulse Width 'Factorial_master:U0_Factorial_master|_register4_r:U0_state|_dff_r:U0_dff_r|q'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

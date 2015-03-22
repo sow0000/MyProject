@@ -1,0 +1,27 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//TITLE : D-latch
+//FILE : _dlatch.v
+//TESTBENCH : _dlatch.v
+//ORGANIZATION : Kwangwoon Univ. Computer Engineering
+//STUDENT ID : 2010720092
+//STUDENT NAME : Hyunjae Lee(kc803@naver.com)
+//PLATFORM : Windows 7
+//SIMULATOR : ModelSim-Altera 10.1d
+//COMPILER : Altera Quartus II 13.0 SP1
+//TARGET BOARD : Altera DE2-70
+//DESCRIPTION : This module defines D-latch
+//LAST UPDATE : Oct. 18, 2013
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+module _dlatch(clk,d,q,q_bar); //Module of D-latch
+	input clk,d; //clk=clock pulse; //input
+	output q,q_bar; //output
+	
+	wire d_bar,r,s; //d_bar=wire of inverted d; //r,s=wire of SR-latch
+	
+	_inv U0_inv(.a(d),.y(d_bar)); //invert d
+	_and2 U1_and2(.a(clk),.b(d_bar),.y(r)); //r=clk x d_bar
+	_and2 U2_and2(.a(clk),.b(d),.y(s)); //s=clk x d
+	_srlatch	U3_srlatch(.r(r),.s(s),.q(q),.q_bar(q_bar)); //SR-latch
+	
+endmodule //End of module

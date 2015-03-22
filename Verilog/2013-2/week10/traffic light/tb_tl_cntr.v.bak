@@ -1,0 +1,12 @@
+`timescale 1ns/100ps
+
+module tb_tl_cntr;
+	reg CLOCK,RESETn,tb_Ta,tb_Tb;
+	wire [1:0] tb_La;
+	wire [1:0] tb_Lb;
+	
+	parameter STEP=10;
+	
+	tl_cntr U0_tl_cntr(.clk(CLOCK),.reset_n(RESETn),.Ta(tb_Ta),.Tb(tb_Tb),.La(tb_La),.Lb(tb_Lb));
+	
+	alway#(STEP)

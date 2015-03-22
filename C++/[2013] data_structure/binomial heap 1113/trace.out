@@ -1,0 +1,48 @@
+Curent Binomial Heap State
+=================================
+Maximum memory space : 70
+Degree of Max node : 1
+Sibling of Max node
+1 : 70 / 530 / 1
+2 : 10 / 390 / 0
+3 : 30 / 770 / 0
+
+All node in Binomial Heap
+Current : 70 / 530	Child : 20 / 400	Sibling : 10 / 390
+Current : 20 / 400	Child : 		Sibling : 20 / 400
+Current : 10 / 390	Child : 		Sibling : 30 / 770
+Current : 30 / 770	Child : 		Sibling : 70 / 530
+
+
+Curent Binomial Heap State
+=================================
+Maximum memory space : 140
+Degree of Max node : 2
+Sibling of Max node
+1 : 140 / 260 / 2
+2 : 30 / 770 / 0
+
+All node in Binomial Heap
+Current : 140 / 260	Child : 100 / 100	Sibling : 30 / 770
+Current : 100 / 100	Child : 		Sibling : 70 / 530
+Current : 70 / 530	Child : 20 / 400	Sibling : 100 / 100
+Current : 20 / 400	Child : 		Sibling : 20 / 400
+Current : 30 / 770	Child : 		Sibling : 140 / 260
+
+
+Curent Binomial Heap State
+=================================
+Maximum memory space : 70
+Degree of Max node : 1
+Sibling of Max node
+1 : 70 / 530 / 1
+2 : 10 / 390 / 0
+3 : 30 / 770 / 0
+
+All node in Binomial Heap
+Current : 70 / 530	Child : 20 / 400	Sibling : 10 / 390
+Current : 20 / 400	Child : 		Sibling : 20 / 400
+Current : 10 / 390	Child : 		Sibling : 30 / 770
+Current : 30 / 770	Child : 		Sibling : 70 / 530
+
+

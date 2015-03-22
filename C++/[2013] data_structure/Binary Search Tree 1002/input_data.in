@@ -1,0 +1,63 @@
+PRINTALL
+
+INSER JungHwan Lee 013-4523 52 wolgye-dong
+
+INSERT JungHwan 013-4523 52 wolgye-dong
+INSERT JungHwan Lee 013-4523
+
+INSERT jungHwan Lee 013-4523 52 wolgye-dong
+INSERT JungHwan lee 013-4523 52 wolgye-dong
+INSERT Jung Hwan Lee 013-4523 52 wolgye-dong
+
+INSERT JungHwan Lee 0134-4523 52 wolgye-dong
+INSERT JungHwan Lee 013-45234 52 wolgye-dong
+INSERT JungHwan Lee 013-452a 52 wolgye-dong
+INSERT JungHwan Lee 01-34523 52 wolgye-dong
+INSERT JungHwan Lee 01304523 52 wolgye-dong
+
+INSERT JungHwan Lee 013-4523 a2 wolgye-dong
+INSERT JungHwan Lee 013-4523 5-2 wolgye-dong
+INSERT JungHwan Lee 013-4523 52 Wolgye-dong
+INSERT JungHwan Lee 013-4523 52 wolgye-donG
+INSERT JungHwan Lee 013-4523 52 -wolgyedong
+INSERT JungHwan Lee 013-4523 52 wolgyedong-
+INSERT JungHwan Lee 013-4523 52 wolgyed-ong
+
+INSERT JungHwan Lee 013-4523 52 wolgye-dong
+INSERT WonYoung Kim 301-5825 1190 myunmok-dong
+INSERT SungHyun Choi 304-5728 714 ssangmun-dong
+INSERT YongHoon Cha 304-2328 1003 shihung-dong
+
+INSERT SungHyun Choi 304-5728 714 ssangmun-dong
+INSERT SungHyun Choi 304-5728 777 shindang-dong
+
+INSERT YongHoon Cha 405-7542 255 wolgye-dong
+INSERT YongHoon Cha 405-7541 255 wolgye-dong
+INSERT YongHoon Cha 405-7543 255 wolgye-dong
+INSERT YongHoon Cha 405-7545 255 wolgye-dong
+INSERT WooShin Lee 216-5728 134 bupyeong-dong
+INSERT Hyun Kim 231-4325 213 wolgye-dong
+
+UPDATE YongHoon Cha 308-2328 18 shindang-dong
+UPDATE YongHoon Cha 304-2328 308-23284 18 shindang-dong
+UPDATE YongHoon Cha 304-23284 308-2328 18 shindang-dong
+UPDATE YongHoon Cha 123-1234 308-2328 18 shindang-dong
+UPDATE Yonghan Cha 304-2328 308-2328 18 shindang-dong
+UPDATE YongHoon Cha 304-2328 308-2328 18 shindang-dong
+UPDATE WonYoung Kim 205-7854 18 shindang-dong
+
+DELETE yongHoon Cha
+DELETE YongHoon Cha
+DELETE YongHoon Cha 123-1234
+DELETE YongHoon Cha 405-7542
+DELETE JungHwan Lee
+
+PRINT yongHoon Cha
+PRINT YongHoon Cha
+PRINT YongHoon Cha 405-7542
+PRINT SungHyun Choi
+
+PRINTNAME hong
+PRINTNAME Hong
+PRINTNAME Kim
+PRINTALL

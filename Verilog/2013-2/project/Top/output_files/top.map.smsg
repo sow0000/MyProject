@@ -1,0 +1,6 @@
+Warning (10273): Verilog HDL warning at ram.v(68): extended using "x" or "z"
+Warning (10268): Verilog HDL information at factorial_slave.v(33): always construct contains both blocking and non-blocking assignments
+Warning (10273): Verilog HDL warning at fact_os_logic.v(334): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at fact_os_logic.v(335): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at fact_os_logic.v(336): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at fact_os_logic.v(337): extended using "x" or "z"

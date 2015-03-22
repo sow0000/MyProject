@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BluetoothEx</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_search">기기 검색</string>
+    <string name="bonded_devices">페어링 된 기기</string>
+    <string name="searched_devices">발견된 기기</string>
+
+</resources>
